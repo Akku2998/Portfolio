@@ -3,9 +3,9 @@ export default function Homelink() {
   return (
     <>
       <section id="home" className="container mx-auto mt-8 text-center">
-        <h1 className="text-4xl font-bold mb-4">Hello, I'm Nidhi Gupta</h1>
+        <h1 className="text-4xl font-bold mb-4">Hello, I&apos;m Nidhi Gupta</h1>
         <p className="text-lg">
-          Welcome to my portfolio! I'm a passionate frontend developer with
+          Welcome to my portfolio! I&apos;m a passionate frontend developer with
           expertise in creating beautiful and interactive user interfaces using
           React.js, HTML, CSS, and JavaScript.
         </p>
