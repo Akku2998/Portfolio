@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  images: {
+    domains: ["atom.redpixelthemes.com"],
+  },
+  experimental: { esmExternals: true },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

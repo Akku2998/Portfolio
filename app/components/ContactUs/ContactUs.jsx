@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-export default function Contact() {
+export const ContactUs = ({ setPageRef }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -13,7 +13,6 @@ export default function Contact() {
   };
 
   const handleSubmit = async (e) => {
-    console.log("Data", formData);
     let response = {};
 
     try {
@@ -31,7 +30,10 @@ export default function Contact() {
 
   return (
     <>
-      <section id="contact" className="container mx-auto mt-8 text-center">
+      <section
+        className="container mx-auto mt-8 text-center"
+        ref={(element) => setPageRef("contact", element)}
+      >
         <h2 className="text-3xl font-bold mb-4">Contact Me</h2>
         <form className="max-w-md mx-auto" onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -92,4 +94,4 @@ export default function Contact() {
       </section>
     </>
   );
-}
+};

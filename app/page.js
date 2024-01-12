@@ -1,9 +1,9 @@
-import { Home } from "./Home/Home";
+import { MainPage } from "./components";
 
-export default function Page() {
+export default function Page(props) {
   return (
     <main className="">
-      <Home />
+      <MainPage {...props} />
     </main>
   );
 }
