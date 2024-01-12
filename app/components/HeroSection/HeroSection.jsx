@@ -8,6 +8,7 @@ import {
   Insta,
   Chevron,
 } from "../../svgs";
+import Image from "next/image";
 
 export const HeroSection = () => {
   return (
@@ -23,9 +24,8 @@ export const HeroSection = () => {
         style={{
           backgroundImage:
             "linear-gradient(to right, rgba(85,64,174,.95), rgba(65,47,144,.93))",
-          // Add other styles as needed
         }}
-      ></div>
+      />
 
       <div className="container relative z-30 pt-20 pb-12 sm:pt-56 sm:pb-48 lg:pt-64 lg:pb-48">
         <div className="flex flex-col items-center justify-center lg:flex-row">
@@ -35,9 +35,11 @@ export const HeroSection = () => {
               borderColor: "rgb(85 64 175/1)",
             }}
           >
-            <img
+            <Image
               src="/user.jpg"
               className="h-64 w-64 object-cover rounded-full"
+              height={200}
+              width={200}
               alt="user"
             />
           </div>
