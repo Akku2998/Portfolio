@@ -36,6 +36,7 @@ export const HeroSection = () => {
             }}
           >
             <Image
+              loading="eager"
               src="/user.jpg"
               className="h-64 w-64 object-cover rounded-full"
               height={200}
