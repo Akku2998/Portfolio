@@ -11,13 +11,13 @@ export const Portfolio = ({ setPageRef }) => {
     {
       title: "Project 2 - MultiDashboard",
       description:
-        "A unified web app combining movie details, Pokémon stats, and social media profiles. Seamlessly switch between dashboards, explore diverse content, and dive into single-user views. Engage with dynamic elements for an immersive, all-in-one exploration experience.",
+        "A unified web app combining movie details, Pokémon stats, and social media profiles. Seamlessly switch between dashboards, explore diverse content, and dive into single-user views. Engage with dynamic elements for an immersive, all-in-one exploration experience. This project is not just about combining data but also about leveraging cutting-edge technologies. The application seamlessly integrates React for a responsive and modular front-end.",
       technologies: ["HTML", "CSS", "Tailwind", "RactJS", "Routers"],
     },
     {
       title: "Project 3 - Portfolio Website",
       description:
-        "My own portfolio website showcasing my skills and projects.",
+        "This portfolio, meticulously crafted with React and Next.js 14, not only reflects my technical proficiency but also my commitment to creating delightful user experiences. By harnessing the power of these cutting-edge technologies, I aim to showcase not just what's achievable, but what's transformative in the realm of web development. This portfolio is built using the latest versions of React and Next.js, ensuring optimal performance and leveraging the benefits of server-side rendering and static site generation. It's not just a collection of projects; it's a testament to the ever-evolving landscape of web development and my dedication to staying at its forefront.",
       technologies: ["React.js", "Nextjs", "Tailwind CSS"],
     },
   ];
@@ -36,11 +36,14 @@ export const Portfolio = ({ setPageRef }) => {
               Here&apos;s what I have done with the past
             </h3>
             <p className="pt-6 leading-relaxed w-9/12">
-              Since beginning my journey as a freelance designer 12 years ago,
-              I&apos;ve done remote work for agencies, consulted for startups,
-              and collaborated with talented people to create digital products
-              for both business and consumer use. I&apos;m quietly confident,
-              naturally curious, and perpetually working on improving my chops.
+              Welcome to my digital space! I&apos;m Nidhi Gupta, a passionate
+              frontend developer dedicated to crafting beautiful and intuitive
+              user experiences. With a keen eye for design and a commitment to
+              clean, efficient code, I bring ideas to life in the digital realm.
+              In the ever-evolving world of web development, I thrive on staying
+              at the forefront of technology. From responsive web design to
+              interactive user interfaces, my goal is to create seamless and
+              engaging experiences for users.
             </p>
           </div>
         </div>
