@@ -1,5 +1,6 @@
 "use client";
-import { Hero } from "@/app/svgs/hero";
+import { Hero } from "../../svgs/Hero";
+
 export const Portfolio = ({ setPageRef }) => {
   const projects = [
     {

@@ -6,3 +6,4 @@ export { Insta } from "./Insta";
 export { Chevron } from "./Chevron";
 export { MobileMenu } from "./MobileMenu";
 export { Close } from "./Close";
+export { Hero } from "./Hero";
