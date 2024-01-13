@@ -6,6 +6,9 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      padding: "1rem",
+    },
     extend: {
       fontFamily: {
         sans: ["var(--font-raleway)"],

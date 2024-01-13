@@ -1,5 +1,5 @@
 "use client";
-
+import { Hero } from "@/app/svgs/hero";
 export const Portfolio = ({ setPageRef }) => {
   const projects = [
     {
@@ -23,6 +23,9 @@ export const Portfolio = ({ setPageRef }) => {
   ];
   return (
     <>
+      <div className="flex justify-center mb-[-0.2rem]">
+        <Hero className="" />
+      </div>
       <section
         className="section bg-primary text-white pb-52"
         ref={(element) => setPageRef("portfolio", element)}
@@ -35,7 +38,12 @@ export const Portfolio = ({ setPageRef }) => {
             <h3 className="font-header text-xl font-medium text-white sm:text-2xl lg:text-3xl">
               Here&apos;s what I have done with the past
             </h3>
-            <p className="pt-6 leading-relaxed w-9/12">
+            <p
+              className="pt-6 leading-relaxed w-9/12"
+              style={{
+                color: "rgb(124 124 124/2)",
+              }}
+            >
               Welcome to my digital space! I&apos;m Nidhi Gupta, a passionate
               frontend developer dedicated to crafting beautiful and intuitive
               user experiences. With a keen eye for design and a commitment to
@@ -54,7 +62,10 @@ export const Portfolio = ({ setPageRef }) => {
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects?.map((project, index) => (
-            <div key={index} className="bg-gray-100 p-4 rounded">
+            <div
+              key={index}
+              className="bg-gray-100 p-4 rounded hover:scale-105"
+            >
               <h3 className="text-xl font-bold mb-2">{project.title}</h3>
               <p className="text-gray-700 mb-2">{project.description}</p>
               <div className="text-gray-500 ">
