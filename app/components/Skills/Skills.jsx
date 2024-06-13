@@ -56,7 +56,7 @@ export const Skills = ({ setPageRef }) => {
           </div>
           <div className="p-4 bg-gray-100 rounded flex flex-col justify-evenly items-center font-bold shadow transition duration-300 transform hover:scale-105 hover:bg-voilet-50 hover:text-yellow-500">
             {/* <Image src="/github.svg" alt="github" width={100} height={100}/> */}
-            <Github width="100px" height="100px" color="#000000" />
+            <Github width="100px" height="100px" />
             Github
           </div>
           <div className="p-4 bg-gray-100 rounded flex flex-col justify-evenly items-center font-bold shadow transition duration-300 transform hover:scale-105 hover:bg-voilet-50 hover:text-yellow-500">
