@@ -1,9 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["atom.redpixelthemes.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "atom.redpixelthemes.com",
+        pathname: "**",
+      },
+    ],
   },
-  experimental: { esmExternals: true },
 };
 
 module.exports = nextConfig;

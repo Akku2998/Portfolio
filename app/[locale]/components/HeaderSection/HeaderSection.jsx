@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { MobileMenu } from "../../svgs";
 import { useTranslation } from "react-i18next";
+import { LanguageSwitcher } from "..";
 
 export const HeaderSection = ({ onMobileDrawerClick, smoothScollView }) => {
   const { t } = useTranslation();
@@ -68,6 +69,9 @@ export const HeaderSection = ({ onMobileDrawerClick, smoothScollView }) => {
                 </span>
 
                 <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+              </li>
+              <li>
+                <LanguageSwitcher />
               </li>
             </ul>
           </div>
