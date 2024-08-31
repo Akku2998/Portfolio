@@ -1,7 +1,7 @@
 "use client";
 import { useContext } from "react";
 import { HeroSection, AboutSection, Skills, Portfolio, ContactUs } from "..";
-import { ScrollViewContext } from "@/app/context/customContexts";
+import { ScrollViewContext } from "@/app/[locale]/context/customContexts";
 
 export const MainPage = () => {
   const pageRefs = useContext(ScrollViewContext);

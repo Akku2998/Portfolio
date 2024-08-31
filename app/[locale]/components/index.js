@@ -8,3 +8,4 @@ export { ContactUs } from "./ContactUs/ContactUs";
 export { Footer } from "./Footer/Footer";
 export { CustomLayout } from "./CustomLayout/CustomLayout";
 export { MainPage } from "./MainPage/MainPage";
+export { LanguageSwitcher } from "./LanguageSwitcher/LanguageSwitcher";

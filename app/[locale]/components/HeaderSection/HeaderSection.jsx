@@ -1,8 +1,10 @@
 "use client";
 import Image from "next/image";
 import { MobileMenu } from "../../svgs";
+import { useTranslation } from "react-i18next";
 
 export const HeaderSection = ({ onMobileDrawerClick, smoothScollView }) => {
+  const { t } = useTranslation();
   return (
     <>
       <div className="w-full z-50 top-0 py-3 sm:py-5 absolute">
@@ -19,7 +21,7 @@ export const HeaderSection = ({ onMobileDrawerClick, smoothScollView }) => {
                 onClick={() => smoothScollView("about")}
               >
                 <span className="cursor-pointer pt-0.5 font-header font-bold uppercase text-white hover:underline hover:decoration-yellow-500">
-                  About
+                  {t("about")}
                 </span>
                 <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
               </li>
@@ -29,7 +31,7 @@ export const HeaderSection = ({ onMobileDrawerClick, smoothScollView }) => {
                 onClick={() => smoothScollView("skills")}
               >
                 <span className="cursor-pointer pt-0.5 font-header font-bold uppercase text-white hover:underline hover:decoration-yellow-500">
-                  Skills
+                  {t("skills")}
                 </span>
 
                 <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
@@ -40,7 +42,7 @@ export const HeaderSection = ({ onMobileDrawerClick, smoothScollView }) => {
                 onClick={() => smoothScollView("portfolio")}
               >
                 <span className="cursor-pointer pt-0.5 font-header font-bold uppercase text-white hover:underline hover:decoration-yellow-500">
-                  Portfolio
+                  {t("portfolio")}
                 </span>
 
                 <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
@@ -51,7 +53,7 @@ export const HeaderSection = ({ onMobileDrawerClick, smoothScollView }) => {
                 onClick={() => smoothScollView("work")}
               >
                 <span className="cursor-pointer pt-0.5 font-header font-bold uppercase text-white hover:underline hover:decoration-yellow-500">
-                  Work
+                  {t("work")}
                 </span>
 
                 <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
@@ -62,7 +64,7 @@ export const HeaderSection = ({ onMobileDrawerClick, smoothScollView }) => {
                 onClick={() => smoothScollView("contact")}
               >
                 <span className="cursor-pointer pt-0.5 font-header font-bold uppercase text-white hover:underline hover:decoration-yellow-500">
-                  Contact
+                  {t("contact")}
                 </span>
 
                 <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
