@@ -2,13 +2,8 @@
 import { useRef } from "react";
 import { HeaderSection, MobileAppDrawer, Footer } from "..";
 import { ScrollViewContext } from "@/app/[locale]/context/customContexts";
-import TranslationsProvider from "@/app/[locale]/context/translationProvider";
-import initTranslations from "@/i18n";
 
-const i18nNamespaces = ["home"];
-
-export const CustomLayout = ({ params: { locale }, children }) => {
-  const { resources } = initTranslations(locale, i18nNamespaces);
+export const CustomLayout = ({ params: { locale }, resources, children }) => {
   const drawerRef = useRef(null);
   const pageRefs = useRef({});
 
@@ -18,16 +13,11 @@ export const CustomLayout = ({ params: { locale }, children }) => {
   };
 
   const smoothScollView = (key) => {
-    debugger;
     pageRefs?.current[key]?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <TranslationsProvider
-      namespaces={i18nNamespaces}
-      locale={locale}
-      resources={resources}
-    >
+    <>
       <HeaderSection
         onMobileDrawerClick={onMobileDrawerClick}
         smoothScollView={smoothScollView}
@@ -40,6 +30,6 @@ export const CustomLayout = ({ params: { locale }, children }) => {
         {children}
       </ScrollViewContext.Provider>
       <Footer />
-    </TranslationsProvider>
+    </>
   );
 };

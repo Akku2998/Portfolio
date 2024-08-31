@@ -1,7 +1,10 @@
 "use client";
 import { Close } from "../../svgs";
+import { useTranslation } from "react-i18next";
+import { LanguageSwitcher } from "..";
 
 export const MobileAppDrawer = ({ drawerRef, smoothScollView }) => {
+  const { t } = useTranslation();
   const onClose = () => {
     const drawerElement = drawerRef?.current;
     drawerElement.classList.remove(...["opacity-100", "pointer-events-auto"]);
@@ -26,7 +29,7 @@ export const MobileAppDrawer = ({ drawerRef, smoothScollView }) => {
             }}
           >
             <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
-              About
+              {t("about")}
             </span>
           </li>
 
@@ -38,7 +41,7 @@ export const MobileAppDrawer = ({ drawerRef, smoothScollView }) => {
             }}
           >
             <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
-              Skills
+              {t("skills")}
             </span>
           </li>
 
@@ -50,7 +53,7 @@ export const MobileAppDrawer = ({ drawerRef, smoothScollView }) => {
             }}
           >
             <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
-              Portfolio
+              {t("portfolio")}
             </span>
           </li>
 
@@ -62,7 +65,7 @@ export const MobileAppDrawer = ({ drawerRef, smoothScollView }) => {
             }}
           >
             <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
-              Work
+              {t("work")}
             </span>
           </li>
 
@@ -74,8 +77,11 @@ export const MobileAppDrawer = ({ drawerRef, smoothScollView }) => {
             }}
           >
             <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
-              Contact
+              {t("contact")}
             </span>
+          </li>
+          <li className="py-2">
+            <LanguageSwitcher />
           </li>
         </ul>
       </div>

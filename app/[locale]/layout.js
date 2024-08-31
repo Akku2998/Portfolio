@@ -3,7 +3,9 @@ import { Raleway, Open_Sans } from "next/font/google";
 import { CustomLayout } from "./components";
 import i18nConfig from "@/i18nConfig";
 import { dir } from "i18next";
-
+import initTranslations from "@/i18n";
+import TranslationsProvider from "@/app/[locale]/context/translationProvider";
+const i18nNamespaces = ["home"];
 const raleway = Raleway({
   subsets: ["latin"],
   variable: "--font-raleway",
@@ -23,7 +25,11 @@ export function generateStaticParams() {
   return i18nConfig.locales.map((locale) => ({ locale }));
 }
 
-export default function RootLayout(props) {
+export default async function RootLayout(props) {
+  const { resources } = await initTranslations(
+    props.params.locale,
+    i18nNamespaces
+  );
   return (
     <html
       lang={props.params.locale}
@@ -31,7 +37,13 @@ export default function RootLayout(props) {
       className={`${raleway.variable} ${openSans.variable} sans-serif`}
     >
       <body>
-        <CustomLayout {...props} />
+        <TranslationsProvider
+          namespaces={i18nNamespaces}
+          locale={props.params.locale}
+          resources={resources}
+        >
+          <CustomLayout {...props} />
+        </TranslationsProvider>
       </body>
     </html>
   );

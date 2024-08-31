@@ -1,3 +1,4 @@
+"use client";
 export { MobileAppDrawer } from "./MobileAppDrawer/MobileAppDrawer";
 export { HeaderSection } from "./HeaderSection/HeaderSection";
 export { HeroSection } from "./HeroSection/HeroSection";
