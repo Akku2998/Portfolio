@@ -56,7 +56,10 @@ export const ContactUs = ({ setPageRef }) => {
             message we receive.
           </p>
         </div>
-        <form className="max-w-md mx-auto mt-8 " onSubmit={handleSubmit}>
+        <form
+          className="max-w-md mx-auto mt-8 text-left"
+          onSubmit={handleSubmit}
+        >
           <div className="mb-4">
             <label
               htmlFor="name"

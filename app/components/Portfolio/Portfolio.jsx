@@ -42,7 +42,7 @@ export const Portfolio = ({ setPageRef }) => {
             <p
               className="pt-6 leading-relaxed w-9/12"
               style={{
-                color: "rgb(124 124 124/2)",
+                color: "rgb(240, 234, 214)",
               }}
             >
               Welcome to my digital space! I&apos;m Nidhi Gupta, a passionate
