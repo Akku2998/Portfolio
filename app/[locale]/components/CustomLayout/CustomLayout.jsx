@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { HeaderSection, MobileAppDrawer, Footer } from "..";
 import { ScrollViewContext } from "@/app/[locale]/context/customContexts";
 
-export const CustomLayout = ({ params: { locale }, resources, children }) => {
+export const CustomLayout = ({ children }) => {
   const drawerRef = useRef(null);
   const pageRefs = useRef({});
 

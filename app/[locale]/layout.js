@@ -5,7 +5,9 @@ import i18nConfig from "@/i18nConfig";
 import { dir } from "i18next";
 import initTranslations from "@/i18n";
 import TranslationsProvider from "@/app/[locale]/context/translationProvider";
+
 const i18nNamespaces = ["home"];
+
 const raleway = Raleway({
   subsets: ["latin"],
   variable: "--font-raleway",
@@ -25,24 +27,21 @@ export function generateStaticParams() {
   return i18nConfig.locales.map((locale) => ({ locale }));
 }
 
-export default async function RootLayout(props) {
-  const { resources } = await initTranslations(
-    props.params.locale,
-    i18nNamespaces
-  );
+export default async function RootLayout({ params: { locale }, ...rest }) {
+  const { resources } = await initTranslations(locale, i18nNamespaces);
   return (
     <html
-      lang={props.params.locale}
-      dir={dir(props.params.locale)}
+      lang={locale}
+      dir={dir(locale)}
       className={`${raleway.variable} ${openSans.variable} sans-serif`}
     >
       <body>
         <TranslationsProvider
           namespaces={i18nNamespaces}
-          locale={props.params.locale}
+          locale={locale}
           resources={resources}
         >
-          <CustomLayout {...props} />
+          <CustomLayout {...rest} />
         </TranslationsProvider>
       </body>
     </html>

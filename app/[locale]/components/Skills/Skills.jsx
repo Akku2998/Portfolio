@@ -1,8 +1,11 @@
 "use client";
 import Image from "next/image";
 import { Github } from "../../svgs";
+import { useTranslation } from "react-i18next";
 
 export const Skills = ({ setPageRef }) => {
+  const { t } = useTranslation();
+
   return (
     <>
       <section
@@ -13,10 +16,10 @@ export const Skills = ({ setPageRef }) => {
           className="text-center font-header text-4xl font-semibold uppercase sm:text-5xl lg:text-6xl"
           style={{ color: "rgba(85, 64, 175)" }}
         >
-          Here&apos;s what I&apos;m good at
+          {t("goodAt")}
         </h2>
         <h3 className="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-          These are the skills
+          {t("theseSkill")}
         </h3>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-12">

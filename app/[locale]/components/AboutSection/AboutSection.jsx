@@ -8,8 +8,11 @@ import {
   Insta,
   Chevron,
 } from "../../svgs";
+import { useTranslation } from "react-i18next";
 
 export const AboutSection = ({ setPageRef }) => {
+  const { t } = useTranslation();
+
   return (
     <div
       className="bg-gray-100"
@@ -21,11 +24,11 @@ export const AboutSection = ({ setPageRef }) => {
             className="font-header text-4xl font-semibold uppercase sm:text-5xl lg:text-6xl"
             style={{ color: "rgba(85, 64, 175)" }}
           >
-            Who am I?
+            {t("whoAmI")}
           </h2>
 
           <h4 className="pt-6 font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-            I&apos;m Nidh, a Web Developer &amp; Competitive Coder
+            {t("webDeveloper")}
           </h4>
           <p
             className="pt-6 font-mono leading-relaxed text-grey-20"
@@ -33,13 +36,7 @@ export const AboutSection = ({ setPageRef }) => {
               color: "rgb(124 124 124/1)",
             }}
           >
-            Web Developer & Competitive Coder with a passion for crafting
-            innovative and efficient solutions. Proficient in front-end and
-            back-end technologies, I specialize in creating dynamic and
-            user-friendly web applications. Experienced in responsive design, I
-            ensure seamless experiences across devices. Adept at leveraging
-            modern frameworks and libraries to enhance functionality and
-            scalability.
+            {t("intro")}
           </p>
           <div className="flex flex-col justify-center pt-6 sm:flex-row lg:justify-start">
             <div className="flex items-center justify-center sm:justify-start">
@@ -47,7 +44,7 @@ export const AboutSection = ({ setPageRef }) => {
                 style={{ color: "rgba(124, 124, 124, 1)" }}
                 className="font-body text-lg font-semibold uppercase"
               >
-                Connect with me
+                {t("connectMe")}
               </p>
 
               <div className="hidden sm:block">
@@ -111,9 +108,7 @@ export const AboutSection = ({ setPageRef }) => {
         </div>
         <div className="w-full pl-0 pt-10 sm:w-3/4 lg:w-2/5 lg:pl-12 lg:pt-0">
           <div className="flex items-end justify-between">
-            <h4 className="font-semibold uppercase text-black">
-              HTML &amp; CSS
-            </h4>
+            <h4 className="font-semibold uppercase text-black">{t("html")}</h4>
             <h3
               className="text-3xl font-semibold font-mono"
               style={{ color: "rgba(85, 64, 175)" }}
@@ -130,7 +125,7 @@ export const AboutSection = ({ setPageRef }) => {
 
           <div className="pt-6">
             <div className="flex items-end justify-between">
-              <h4 className="font-semibold uppercase text-black">JavaScript</h4>
+              <h4 className="font-semibold uppercase text-black">{t("js")}</h4>
               <h3
                 className="text-3xl font-semibold font-mono"
                 style={{ color: "rgba(85, 64, 175)" }}
@@ -150,7 +145,9 @@ export const AboutSection = ({ setPageRef }) => {
           </div>
           <div className="pt-6">
             <div className="flex items-end justify-between">
-              <h4 className="font-semibold uppercase text-black">ReactJS</h4>
+              <h4 className="font-semibold uppercase text-black">
+                {t("react")}
+              </h4>
               <h3
                 className="text-3xl font-semibold text-primary font-mono"
                 style={{ color: "rgba(85, 64, 175)" }}
@@ -170,7 +167,9 @@ export const AboutSection = ({ setPageRef }) => {
           </div>
           <div className="pt-6">
             <div className="flex items-end justify-between">
-              <h4 className="font-semibold uppercase text-black">NextJS</h4>
+              <h4 className="font-semibold uppercase text-black">
+                {t("next")}
+              </h4>
               <h3
                 className="text-3xl font-semibold text-primary font-mono"
                 style={{ color: "rgba(85, 64, 175)" }}
@@ -190,7 +189,9 @@ export const AboutSection = ({ setPageRef }) => {
           </div>
           <div className="pt-6">
             <div className="flex items-end justify-between">
-              <h4 className="font-semibold uppercase text-black">Figma</h4>
+              <h4 className="font-semibold uppercase text-black">
+                {t("figma")}
+              </h4>
               <h3
                 className="text-3xl font-semibold text-primary font-mono"
                 style={{ color: "rgba(85, 64, 175)" }}

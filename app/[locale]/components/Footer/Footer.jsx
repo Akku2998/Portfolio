@@ -7,7 +7,11 @@ import {
   Insta,
   Chevron,
 } from "../../svgs";
+import { useTranslation } from "react-i18next";
+
 export function Footer() {
+  const { t } = useTranslation();
+
   return (
     <>
       <footer className="bg-primary text-white py-8 mt-16">
@@ -30,7 +34,7 @@ export function Footer() {
 
             <div className="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
               <p className="font-body text-lg uppercase text-white">
-                Let&apos;s connect
+                {t("connect")}
               </p>
               {/* <div className="hidden sm:flex"> */}
               <i className="text-3xl text-yellow-400">
@@ -89,7 +93,7 @@ export function Footer() {
             </div>
 
             <div className="mt-4">
-              <p className="text-sm">Location: Bengaluru, India</p>
+              <p className="text-sm">{t("location")}</p>
             </div>
             <p className="mt-4 text-sm">
               Nidhi Gupta &copy; {new Date().getFullYear()} | Frontend Developer
