@@ -23,7 +23,7 @@ export const Portfolio = ({ setPageRef }) => {
   ];
   return (
     <>
-      <div className="flex justify-center mb-[-0.2rem]">
+      <div className="flex justify-center mb-[-0.2rem] mt-16">
         <Hero className="" />
       </div>
       <section
@@ -57,7 +57,7 @@ export const Portfolio = ({ setPageRef }) => {
           {projects?.map((project, index) => (
             <div
               key={index}
-              className="bg-gray-100 p-4 rounded hover:scale-105"
+              className="bg-gray-100 p-8 rounded hover:scale-105"
             >
               <h3 className="text-xl font-bold mb-2">{project.title}</h3>
               <p className="text-gray-700 mb-2">{project.description}</p>
