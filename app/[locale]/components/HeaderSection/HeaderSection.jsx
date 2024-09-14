@@ -8,10 +8,8 @@ import { useState, useEffect } from "react";
 export const HeaderSection = ({ onMobileDrawerClick, smoothScollView }) => {
   const { t } = useTranslation();
 
-  // Set initial theme based on user preference
   const [darkMode, setDarkMode] = useState(false);
 
-  // Function to toggle dark mode
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
     if (!darkMode) {
@@ -21,7 +19,6 @@ export const HeaderSection = ({ onMobileDrawerClick, smoothScollView }) => {
     }
   };
 
-  // Effect to set dark mode based on user preference or system theme
   useEffect(() => {
     const userPrefersDark = window.matchMedia(
       "(prefers-color-scheme: dark)"
@@ -119,7 +116,7 @@ export const HeaderSection = ({ onMobileDrawerClick, smoothScollView }) => {
                   </svg>
                 </button>
               </li> */}
-              <li className="nav-item md:pl-3">
+              {/* <li className="nav-item md:pl-3">
                 <a
                   className="nav-link nav-svg"
                   aria-label="Turn On Dark Mode"
@@ -134,7 +131,7 @@ export const HeaderSection = ({ onMobileDrawerClick, smoothScollView }) => {
                     <path d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12-5.373-12-12-12-12 5.373-12 12zm2 0c0-5.514 4.486-10 10-10v20c-5.514 0-10-4.486-10-10z"></path>
                   </svg>
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
           <div className="block lg:hidden">
