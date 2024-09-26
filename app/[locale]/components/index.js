@@ -11,3 +11,7 @@ export { CustomLayout } from "./CustomLayout/CustomLayout";
 export { MainPage } from "./MainPage/MainPage";
 export { WorkPage } from "./WorkPage/WorkPage";
 export { LanguageSwitcher } from "./LanguageSwitcher/LanguageSwitcher";
+export {
+  DarkModeProvider,
+  DarkModeContext,
+} from "./DarkModeContext/DarkModeContext";

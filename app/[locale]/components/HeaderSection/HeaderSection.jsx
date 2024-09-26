@@ -3,31 +3,13 @@ import Image from "next/image";
 import { MobileMenu } from "../../svgs";
 import { useTranslation } from "react-i18next";
 import { LanguageSwitcher } from "..";
-import { useState, useEffect } from "react";
+import { useContext } from "react";
+import { DarkModeContext } from "..";
 
 export const HeaderSection = ({ onMobileDrawerClick, smoothScollView }) => {
   const { t } = useTranslation();
 
-  const [darkMode, setDarkMode] = useState(false);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    if (!darkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  };
-
-  useEffect(() => {
-    const userPrefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    if (userPrefersDark) {
-      setDarkMode(true);
-      document.documentElement.classList.add("dark");
-    }
-  }, []);
+  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
 
   return (
     <>
@@ -95,43 +77,23 @@ export const HeaderSection = ({ onMobileDrawerClick, smoothScollView }) => {
               <li className="group pl-6">
                 <LanguageSwitcher />
               </li>
-              {/* <li className="nav-item md:pl-3">
+              <li className="nav-item md:pl-3 pt-1">
                 <button
-                  onClick={toggleDarkMode}
-                  className="nav-link nav-svg"
-                  aria-label={`Turn ${darkMode ? "Off" : "On"} Dark Mode`}
-                  title={`Turn ${darkMode ? "Off" : "On"} Dark Mode`}
+                  className="nav-link nav-svg cursor-pointer"
+                  aria-label="Toggle Dark Mode"
+                  onClick={toggleDarkMode} // Toggle dark mode when clicking the icon
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
-                  >
-                    {darkMode ? (
-                      <path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8.009 8.009 0 0 1-8 8z" />
-                    ) : (
-                      <path d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12-5.373-12-12-12-12 5.373-12 12zm2 0c0-5.514 4.486-10 10-10v20c-5.514 0-10-4.486-10-10z" />
-                    )}
-                  </svg>
-                </button>
-              </li> */}
-              {/* <li className="nav-item md:pl-3">
-                <a
-                  className="nav-link nav-svg"
-                  aria-label="Turn On Dark Mode"
-                  href="/about#!"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
+                    fill={darkMode ? "#fff" : "#000"}
                   >
                     <path d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12-5.373-12-12-12-12 5.373-12 12zm2 0c0-5.514 4.486-10 10-10v20c-5.514 0-10-4.486-10-10z"></path>
                   </svg>
-                </a>
-              </li> */}
+                </button>
+              </li>
             </ul>
           </div>
           <div className="block lg:hidden">

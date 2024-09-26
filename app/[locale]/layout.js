@@ -5,6 +5,7 @@ import i18nConfig from "@/i18nConfig";
 import { dir } from "i18next";
 import initTranslations from "@/i18n";
 import TranslationsProvider from "@/app/[locale]/context/translationProvider";
+import { DarkModeProvider } from "./components";
 
 const i18nNamespaces = ["home"];
 
@@ -41,7 +42,9 @@ export default async function RootLayout({ params: { locale }, ...rest }) {
           locale={locale}
           resources={resources}
         >
-          <CustomLayout {...rest} />
+          <DarkModeProvider>
+            <CustomLayout {...rest} />
+          </DarkModeProvider>
         </TranslationsProvider>
       </body>
     </html>

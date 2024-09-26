@@ -10,9 +10,13 @@ import {
 } from "../../svgs";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
+import { DarkModeContext } from "..";
+import { useContext } from "react";
 
 export const HeroSection = () => {
   const { t } = useTranslation();
+  const { darkMode } = useContext(DarkModeContext);
+  console.log("Dark mode", darkMode);
   return (
     <div
       className="relative bg-cover bg-center bg-no-repeat py-8"
@@ -24,8 +28,9 @@ export const HeroSection = () => {
       <div
         className="absolute inset-0 z-20"
         style={{
-          backgroundImage:
-            "linear-gradient(to right, rgba(85,64,174,.95), rgba(65,47,144,.93))",
+          backgroundImage: darkMode
+            ? "linear-gradient(to right, rgba(0, 0, 0, 0.90), rgba(0, 0, 0, 0.87))"
+            : "linear-gradient(to right, rgba(85,64,174,.95), rgba(65,47,144,.93))",
         }}
       />
 
@@ -34,7 +39,7 @@ export const HeroSection = () => {
           <div
             className="rounded-full border-8 shadow-xl"
             style={{
-              borderColor: "rgb(85 64 175/1)",
+              borderColor: darkMode ? "#202020" : "rgb(85 64 175/1)",
             }}
           >
             <Image

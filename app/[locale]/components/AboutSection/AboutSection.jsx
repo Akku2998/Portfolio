@@ -9,41 +9,32 @@ import {
   Chevron,
 } from "../../svgs";
 import { useTranslation } from "react-i18next";
+import { DarkModeContext } from "..";
+import { useContext } from "react";
 
 export const AboutSection = ({ setPageRef }) => {
   const { t } = useTranslation();
-
+  const { darkMode } = useContext(DarkModeContext);
   return (
     <div
-      className="bg-gray-100"
+      className="bg-gray-100 dark:bg-gray-300 "
       ref={(element) => setPageRef("about", element)}
     >
       <div className="container mx-auto flex flex-col items-center py-16 px-6 md:py-20 lg:flex-row">
         <div className="w-full text-center sm:w-3/4 lg:w-3/5 lg:text-left">
-          <h2
-            className="font-header text-4xl font-semibold uppercase sm:text-5xl lg:text-6xl"
-            style={{ color: "rgba(85, 64, 175)" }}
-          >
+          <h2 className="font-header text-4xl font-semibold uppercase sm:text-5xl lg:text-6xl text-voilet-50 dark:text-black">
             {t("whoAmI")}
           </h2>
 
           <h4 className="pt-6 font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
             {t("webDeveloper")}
           </h4>
-          <p
-            className="pt-6 font-mono leading-relaxed text-grey-20"
-            style={{
-              color: "rgb(124 124 124/1)",
-            }}
-          >
+          <p className="pt-6 font-mono leading-relaxed text-gray-500">
             {t("intro")}
           </p>
           <div className="flex flex-col justify-center pt-6 sm:flex-row lg:justify-start">
             <div className="flex items-center justify-center sm:justify-start">
-              <p
-                style={{ color: "rgba(124, 124, 124, 1)" }}
-                className="font-body text-lg font-semibold uppercase"
-              >
+              <p className="font-body text-lg font-semibold uppercase text-gray-600">
                 {t("connectMe")}
               </p>
 
@@ -59,7 +50,7 @@ export const AboutSection = ({ setPageRef }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i className="text-2xl text-voilet-50 hover:text-yellow-500">
+                <i className="text-2xl text-voilet-50 dark:text-black hover:text-yellow-500">
                   <Facebook color="currentColor" />
                 </i>
               </Link>
@@ -69,7 +60,7 @@ export const AboutSection = ({ setPageRef }) => {
                 rel="noopener noreferrer"
                 className="pl-4"
               >
-                <i className="text-2xl text-voilet-50 hover:text-yellow-500">
+                <i className="text-2xl text-voilet-50 dark:text-black hover:text-yellow-500">
                   <Github color="currentColor" />
                 </i>
               </Link>
@@ -79,7 +70,7 @@ export const AboutSection = ({ setPageRef }) => {
                 rel="noopener noreferrer"
                 className="pl-4"
               >
-                <i className="text-2xl text-voilet-50 hover:text-yellow-500">
+                <i className="text-2xl text-voilet-50 dark:text-black hover:text-yellow-500">
                   <Twitter color="currentColor" />
                 </i>
               </Link>
@@ -89,7 +80,7 @@ export const AboutSection = ({ setPageRef }) => {
                 rel="noopener noreferrer"
                 className="pl-4"
               >
-                <i className="text-2xl text-voilet-50 hover:text-yellow-500">
+                <i className="text-2xl text-voilet-50 dark:text-black hover:text-yellow-500">
                   <Linkedin color="currentColor" />
                 </i>
               </Link>
@@ -99,7 +90,7 @@ export const AboutSection = ({ setPageRef }) => {
                 rel="noopener noreferrer"
                 className="pl-4"
               >
-                <i className="text-2xl text-voilet-50 hover:text-yellow-500">
+                <i className="text-2xl text-voilet-50 dark:text-black hover:text-yellow-500">
                   <Insta color="currentColor" />
                 </i>
               </Link>
@@ -110,16 +101,20 @@ export const AboutSection = ({ setPageRef }) => {
           <div className="flex items-end justify-between">
             <h4 className="font-semibold uppercase text-black">{t("html")}</h4>
             <h3
-              className="text-3xl font-semibold font-mono"
-              style={{ color: "rgba(85, 64, 175)" }}
+              className="text-3xl font-semibold font-mono text-voilet-50"
+              style={{ color: darkMode ? "#202020" : "rgba(85, 64, 175)" }}
+              // style={{ color: darkMode ? "#202020" : "rgba(85, 64, 175)" }}
             >
               85%
             </h3>
           </div>
-          <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-300">
+          <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-200">
             <div
               className=" h-2.5 rounded-full"
-              style={{ width: "85%", backgroundColor: "rgba(85, 64, 175, 1)" }}
+              style={{
+                width: "85%",
+                backgroundColor: darkMode ? "#202020" : "rgba(85, 64, 175, 1)",
+              }}
             ></div>
           </div>
 
@@ -128,17 +123,19 @@ export const AboutSection = ({ setPageRef }) => {
               <h4 className="font-semibold uppercase text-black">{t("js")}</h4>
               <h3
                 className="text-3xl font-semibold font-mono"
-                style={{ color: "rgba(85, 64, 175)" }}
+                style={{ color: darkMode ? "#202020" : "rgba(85, 64, 175)" }}
               >
                 95%
               </h3>
             </div>
-            <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-300">
+            <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-200">
               <div
                 className=" h-2.5 rounded-full"
                 style={{
                   width: "95%",
-                  backgroundColor: "rgba(85, 64, 175, 1)",
+                  backgroundColor: darkMode
+                    ? "#202020"
+                    : "rgba(85, 64, 175, 1)",
                 }}
               ></div>
             </div>
@@ -150,17 +147,19 @@ export const AboutSection = ({ setPageRef }) => {
               </h4>
               <h3
                 className="text-3xl font-semibold text-primary font-mono"
-                style={{ color: "rgba(85, 64, 175)" }}
+                style={{ color: darkMode ? "#202020" : "rgba(85, 64, 175)" }}
               >
                 90%
               </h3>
             </div>
-            <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-300">
+            <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-200">
               <div
                 className=" h-2.5 rounded-full"
                 style={{
                   width: "90%",
-                  backgroundColor: "rgba(85, 64, 175, 1)",
+                  backgroundColor: darkMode
+                    ? "#202020"
+                    : "rgba(85, 64, 175, 1)",
                 }}
               ></div>
             </div>
@@ -172,17 +171,19 @@ export const AboutSection = ({ setPageRef }) => {
               </h4>
               <h3
                 className="text-3xl font-semibold text-primary font-mono"
-                style={{ color: "rgba(85, 64, 175)" }}
+                style={{ color: darkMode ? "#202020" : "rgba(85, 64, 175)" }}
               >
                 93%
               </h3>
             </div>
-            <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-300">
+            <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-200">
               <div
                 className=" h-2.5 rounded-full"
                 style={{
                   width: "93%",
-                  backgroundColor: "rgba(85, 64, 175, 1)",
+                  backgroundColor: darkMode
+                    ? "#202020"
+                    : "rgba(85, 64, 175, 1)",
                 }}
               ></div>
             </div>
@@ -194,17 +195,19 @@ export const AboutSection = ({ setPageRef }) => {
               </h4>
               <h3
                 className="text-3xl font-semibold text-primary font-mono"
-                style={{ color: "rgba(85, 64, 175)" }}
+                style={{ color: darkMode ? "#202020" : "rgba(85, 64, 175)" }}
               >
                 75%
               </h3>
             </div>
-            <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-300">
+            <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-200">
               <div
                 className=" h-2.5 rounded-full"
                 style={{
                   width: "75%",
-                  backgroundColor: "rgba(85, 64, 175, 1)",
+                  backgroundColor: darkMode
+                    ? "#202020"
+                    : "rgba(85, 64, 175, 1)",
                 }}
               ></div>
             </div>
