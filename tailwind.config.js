@@ -23,6 +23,9 @@ module.exports = {
       backgroundColor: {
         primary: "#5540af",
       },
+      textColor: {
+        primary: "#5540af",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

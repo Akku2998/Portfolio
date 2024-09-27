@@ -16,7 +16,6 @@ import { useContext } from "react";
 export const HeroSection = () => {
   const { t } = useTranslation();
   const { darkMode } = useContext(DarkModeContext);
-  console.log("Dark mode", darkMode);
   return (
     <div
       className="relative bg-cover bg-center bg-no-repeat py-8"

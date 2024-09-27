@@ -50,7 +50,7 @@ export const AboutSection = ({ setPageRef }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i className="text-2xl text-voilet-50 dark:text-black hover:text-yellow-500">
+                <i className="text-2xl text-voilet-50 dark:text-black hover:text-yellow-500 hover:dark:text-white">
                   <Facebook color="currentColor" />
                 </i>
               </Link>
@@ -60,7 +60,7 @@ export const AboutSection = ({ setPageRef }) => {
                 rel="noopener noreferrer"
                 className="pl-4"
               >
-                <i className="text-2xl text-voilet-50 dark:text-black hover:text-yellow-500">
+                <i className="text-2xl text-voilet-50 dark:text-black hover:text-yellow-500 hover:dark:text-white">
                   <Github color="currentColor" />
                 </i>
               </Link>
@@ -70,7 +70,7 @@ export const AboutSection = ({ setPageRef }) => {
                 rel="noopener noreferrer"
                 className="pl-4"
               >
-                <i className="text-2xl text-voilet-50 dark:text-black hover:text-yellow-500">
+                <i className="text-2xl text-voilet-50 dark:text-black hover:text-yellow-500 hover:dark:text-white">
                   <Twitter color="currentColor" />
                 </i>
               </Link>
@@ -80,7 +80,7 @@ export const AboutSection = ({ setPageRef }) => {
                 rel="noopener noreferrer"
                 className="pl-4"
               >
-                <i className="text-2xl text-voilet-50 dark:text-black hover:text-yellow-500">
+                <i className="text-2xl text-voilet-50 dark:text-black hover:text-yellow-500 hover:dark:text-white">
                   <Linkedin color="currentColor" />
                 </i>
               </Link>
@@ -90,7 +90,7 @@ export const AboutSection = ({ setPageRef }) => {
                 rel="noopener noreferrer"
                 className="pl-4"
               >
-                <i className="text-2xl text-voilet-50 dark:text-black hover:text-yellow-500">
+                <i className="text-2xl text-voilet-50 dark:text-black hover:text-yellow-500 hover:dark:text-white">
                   <Insta color="currentColor" />
                 </i>
               </Link>

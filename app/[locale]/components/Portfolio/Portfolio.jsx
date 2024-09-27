@@ -1,9 +1,12 @@
 "use client";
 import { Hero } from "../../svgs/Hero";
 import { useTranslation } from "react-i18next";
+import { DarkModeContext } from "..";
+import { useContext } from "react";
 
 export const Portfolio = ({ setPageRef }) => {
   const { t } = useTranslation();
+  const { darkMode } = useContext(DarkModeContext);
   const projects = [
     {
       title: t("project1"),
@@ -24,10 +27,10 @@ export const Portfolio = ({ setPageRef }) => {
   return (
     <>
       <div className="flex justify-center mb-[-0.2rem] mt-16">
-        <Hero className="" />
+        <Hero color={darkMode ? "#000000" : "#6E07F3"} />
       </div>
       <section
-        className="section bg-primary text-white pb-52"
+        className="section bg-primary dark:bg-black text-white pb-52"
         ref={(element) => setPageRef("portfolio", element)}
       >
         <div className="container mx-auto">

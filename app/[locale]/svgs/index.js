@@ -7,3 +7,6 @@ export { Chevron } from "./Chevron";
 export { MobileMenu } from "./MobileMenu";
 export { Close } from "./Close";
 export { Hero } from "./Hero";
+export { Nextjs } from "./Nextjs";
+export { Html5 } from "./Html5";
+export { Debug } from "./Debug";

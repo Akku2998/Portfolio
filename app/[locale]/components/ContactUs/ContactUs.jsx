@@ -38,8 +38,8 @@ export const ContactUs = ({ setPageRef }) => {
       >
         <div className="flex flex-col text-center items-center">
           <h2
-            className="text-center font-header text-4xl font-semibold uppercase sm:text-5xl lg:text-6xl"
-            style={{ color: "rgba(85, 64, 175)" }}
+            className="text-center font-header text-4xl font-semibold uppercase sm:text-5xl lg:text-6xl text-primary dark:text-black"
+            // style={{ color: "rgba(85, 64, 175)" }}
           >
             {t("contactForm")}
           </h2>
@@ -108,7 +108,7 @@ export const ContactUs = ({ setPageRef }) => {
           </div>
           <button
             type="submit"
-            className="bg-primary text-white px-8 py-4 rounded-full"
+            className="bg-primary dark:bg-black text-white px-8 py-4 rounded-full"
           >
             {t("sendMsg")}
           </button>
@@ -125,7 +125,7 @@ export const ContactUs = ({ setPageRef }) => {
                 {t("myPhone")}
               </p>
             </div>
-            <p className="pt-2 text-left font-semibold  text-voilet-50 lg:text-lg ">
+            <p className="pt-2 text-left font-semibold  text-voilet-50 dark:text-black lg:text-lg ">
               (+91) 6205098469
             </p>
           </div>
@@ -140,7 +140,7 @@ export const ContactUs = ({ setPageRef }) => {
                 {t("myEmail")}
               </p>
             </div>
-            <p className="pt-2 text-left font-body  font-semibold text-voilet-50 lg:text-lg">
+            <p className="pt-2 text-left font-body  font-semibold text-voilet-50 lg:text-lg dark:text-black">
               aakritinidhi123@gmail.com
             </p>
           </div>
@@ -155,7 +155,7 @@ export const ContactUs = ({ setPageRef }) => {
                 {t("myAddress")}
               </p>
             </div>
-            <p className="pt-2 text-left font-body font-semibold  text-voilet-50 lg:text-lg">
+            <p className="pt-2 text-left font-body font-semibold  text-voilet-50 lg:text-lg dark:text-black">
               Shravanthi woods, Nobo Nagar Bengaluru
             </p>
           </div>

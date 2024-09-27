@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Hero = ({ height = "70%", width = "70%", ...props }) => {
+export const Hero = ({ height = "70%", width = "70%", color, ...props }) => {
   return (
     <svg
       width={width}
@@ -28,9 +28,9 @@ export const Hero = ({ height = "70%", width = "70%", ...props }) => {
           <path
             d="M1438.00651,188 L558.993491,188 C555.683075,188 552.682902,189.344447 550.51102,191.51985 C548.342374,193.692012 547,196.692365 547,200.00645 L547,696.99355 C547,700.308186 548.341887,703.308877 550.51057,705.481075 C552.681551,707.655576 555.680873,709 558.993491,709 L1438.00651,709 C1441.31693,709 1444.3171,707.655553 1446.48898,705.48015 C1448.65763,703.307988 1450,700.307635 1450,696.99355 L1450,200.00645 C1450,196.691814 1448.65811,193.691123 1446.48943,191.518925 C1444.31845,189.344424 1441.31913,188 1438.00651,188 Z"
             id="Case"
-            stroke="#6E07F3"
+            stroke={color}
             strokeWidth="8"
-            fill="#6E07F3"
+            fill={color}
           ></path>
           <path
             d="M1073.3498,849 L925.650197,849 L915.67888,978 L1083.32112,978 L1073.3498,849 Z"
@@ -93,9 +93,9 @@ export const Hero = ({ height = "70%", width = "70%", ...props }) => {
           ></rect>
           <circle
             id="Oval-6"
-            stroke="#6E07F3"
+            stroke={color}
             strokeWidth="8"
-            fill="#6E07F3"
+            fill={color}
             cx="445"
             cy="805"
             r="15"
@@ -186,7 +186,7 @@ export const Hero = ({ height = "70%", width = "70%", ...props }) => {
               fill="#FFFFFF"
             ></path>
             <circle id="Oval-5" fill="#141C3A" cx="39" cy="28" r="9"></circle>
-            <circle id="Oval-5" fill="#6E07F3" cx="69" cy="28" r="9"></circle>
+            <circle id="Oval-5" fill={color} cx="69" cy="28" r="9"></circle>
             <circle id="Oval-5" fill="#5BE9B9" cx="99" cy="28" r="9"></circle>
             <g id="Group-72" transform="translate(52.000000, 143.000000)">
               <rect
@@ -212,7 +212,7 @@ export const Hero = ({ height = "70%", width = "70%", ...props }) => {
               <path
                 d="M34,0 L61,0 C63.209139,-4.05812251e-16 65,1.790861 65,4 C65,6.209139 63.209139,8 61,8 L34,8 C31.790861,8 30,6.209139 30,4 C30,1.790861 31.790861,4.05812251e-16 34,0 Z"
                 id="Rectangle-11"
-                fill="#6E07F3"
+                fill={color}
               ></path>
               <path
                 d="M79,0 L106,0 C108.209139,-4.05812251e-16 110,1.790861 110,4 C110,6.209139 108.209139,8 106,8 L79,8 C76.790861,8 75,6.209139 75,4 C75,1.790861 76.790861,4.05812251e-16 79,0 Z"
@@ -222,12 +222,12 @@ export const Hero = ({ height = "70%", width = "70%", ...props }) => {
               <path
                 d="M124,0 L174,0 C176.209139,-4.05812251e-16 178,1.790861 178,4 C178,6.209139 176.209139,8 174,8 L124,8 C121.790861,8 120,6.209139 120,4 C120,1.790861 121.790861,4.05812251e-16 124,0 Z"
                 id="Rectangle-11"
-                fill="#6E07F3"
+                fill={color}
               ></path>
               <path
                 d="M192,0 L266,0 C268.209139,-4.05812251e-16 270,1.790861 270,4 C270,6.209139 268.209139,8 266,8 L192,8 C189.790861,8 188,6.209139 188,4 C188,1.790861 189.790861,4.05812251e-16 192,0 Z"
                 id="Rectangle-11"
-                fill="#6E07F3"
+                fill={color}
               ></path>
               <rect
                 id="Rectangle-11"
@@ -291,7 +291,7 @@ export const Hero = ({ height = "70%", width = "70%", ...props }) => {
               ></rect>
               <rect
                 id="Rectangle-11"
-                fill="#6E07F3"
+                fill={color}
                 x="30"
                 y="40"
                 width="70"
@@ -309,7 +309,7 @@ export const Hero = ({ height = "70%", width = "70%", ...props }) => {
               ></rect>
               <rect
                 id="Rectangle-11"
-                fill="#6E07F3"
+                fill={color}
                 x="240"
                 y="40"
                 width="50"
@@ -327,7 +327,7 @@ export const Hero = ({ height = "70%", width = "70%", ...props }) => {
               ></rect>
               <rect
                 id="Rectangle-11"
-                fill="#6E07F3"
+                fill={color}
                 x="90"
                 y="80"
                 width="50"
@@ -336,7 +336,7 @@ export const Hero = ({ height = "70%", width = "70%", ...props }) => {
               ></rect>
               <rect
                 id="Rectangle-11"
-                fill="#6E07F3"
+                fill={color}
                 x="150"
                 y="80"
                 width="30"
@@ -345,7 +345,7 @@ export const Hero = ({ height = "70%", width = "70%", ...props }) => {
               ></rect>
               <rect
                 id="Rectangle-11"
-                fill="#6E07F3"
+                fill={color}
                 x="30"
                 y="120"
                 width="100"
@@ -354,7 +354,7 @@ export const Hero = ({ height = "70%", width = "70%", ...props }) => {
               ></rect>
               <rect
                 id="Rectangle-11"
-                fill="#6E07F3"
+                fill={color}
                 x="140"
                 y="120"
                 width="70"
@@ -363,7 +363,7 @@ export const Hero = ({ height = "70%", width = "70%", ...props }) => {
               ></rect>
               <rect
                 id="Rectangle-11"
-                fill="#6E07F3"
+                fill={color}
                 x="30"
                 y="160"
                 width="100"
@@ -381,7 +381,7 @@ export const Hero = ({ height = "70%", width = "70%", ...props }) => {
               ></rect>
               <rect
                 id="Rectangle-11"
-                fill="#6E07F3"
+                fill={color}
                 x="30"
                 y="200"
                 width="70"
@@ -399,7 +399,7 @@ export const Hero = ({ height = "70%", width = "70%", ...props }) => {
               ></rect>
               <rect
                 id="Rectangle-11"
-                fill="#6E07F3"
+                fill={color}
                 x="190"
                 y="200"
                 width="40"
@@ -408,7 +408,7 @@ export const Hero = ({ height = "70%", width = "70%", ...props }) => {
               ></rect>
               <rect
                 id="Rectangle-11"
-                fill="#6E07F3"
+                fill={color}
                 x="30"
                 y="240"
                 width="130"
@@ -442,12 +442,12 @@ export const Hero = ({ height = "70%", width = "70%", ...props }) => {
               fill="#141C3A"
             ></path>
             <circle id="Oval-5" fill="#FFFFFF" cx="39" cy="25" r="9"></circle>
-            <circle id="Oval-5" fill="#6E07F3" cx="69" cy="25" r="9"></circle>
+            <circle id="Oval-5" fill={color} cx="69" cy="25" r="9"></circle>
             <circle id="Oval-5" fill="#5BE9B9" cx="99" cy="25" r="9"></circle>
             <g id="Group-61" transform="translate(219.000000, 139.000000)">
               <circle
                 id="Oval-6"
-                stroke="#6E07F3"
+                stroke={color}
                 strokeWidth="9"
                 cx="116"
                 cy="116"
@@ -537,7 +537,7 @@ export const Hero = ({ height = "70%", width = "70%", ...props }) => {
               ></rect>
               <rect
                 id="Rectangle-15"
-                fill="#6E07F3"
+                fill={color}
                 x="0"
                 y="180"
                 width="70"
@@ -604,7 +604,7 @@ export const Hero = ({ height = "70%", width = "70%", ...props }) => {
               id="Rectangle-17"
               stroke="#141C3A"
               strokeWidth="8"
-              fill="#6E07F3"
+              fill={color}
             ></path>
             <path
               d="M292.786115,27 L62,27 C52.0588745,27 43.0588745,31.0294373 36.5441559,37.5441559 C30.0294373,44.0588745 26,53.0588745 26,63 C26,72.9411255 30.0294373,81.9411255 36.5441559,88.4558441 C43.0588745,94.9705627 52.0588745,99 62,99 C170.896078,99 248.328246,99.207629 294.296506,99.6226771 L294.296501,99.622677 C286.250429,97.4498695 277.022582,94.3704156 270.470403,87.641048 C265.206835,82.235138 261.498047,74.5375027 261.498047,63 C261.498047,51.353038 265.276502,43.6274533 270.618803,38.2399335 C276.749875,32.0569662 285.175864,29.0416346 292.786115,27 Z"
