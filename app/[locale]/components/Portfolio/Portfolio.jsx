@@ -1,7 +1,7 @@
 "use client";
 import { Hero } from "../../svgs/Hero";
 import { useTranslation } from "react-i18next";
-import { DarkModeContext } from "..";
+import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext } from "react";
 
 export const Portfolio = ({ setPageRef }) => {

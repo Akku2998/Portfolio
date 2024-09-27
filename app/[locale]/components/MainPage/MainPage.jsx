@@ -8,7 +8,7 @@ import {
   ContactUs,
   WorkPage,
 } from "..";
-import { ScrollViewContext } from "@/app/[locale]/context/customContexts";
+import { ScrollViewContext } from "@/app/[locale]/context/scrollViewContext";
 
 export const MainPage = () => {
   const pageRefs = useContext(ScrollViewContext);

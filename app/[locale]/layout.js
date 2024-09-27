@@ -5,7 +5,7 @@ import i18nConfig from "@/i18nConfig";
 import { dir } from "i18next";
 import initTranslations from "@/i18n";
 import TranslationsProvider from "@/app/[locale]/context/translationProvider";
-import { DarkModeProvider } from "./components";
+import { DarkModeProvider } from "./context/darkModeProvider";
 
 const i18nNamespaces = ["home"];
 

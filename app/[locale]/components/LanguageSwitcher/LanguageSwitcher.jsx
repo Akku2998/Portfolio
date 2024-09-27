@@ -38,19 +38,15 @@ export const LanguageSwitcher = () => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  // const handleChange = (e) => {
-  //   const newLocale = e.target.value;
   const handleChange = (newLocale) => {
     setIsOpen(false);
 
-    // set cookie for next-i18n-router
     const days = 30;
     const date = new Date();
     date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
     const expires = date.toUTCString();
     document.cookie = `NEXT_LOCALE=${newLocale};expires=${expires};path=/`;
 
-    // redirect to the new locale path
     if (
       currentLocale === i18nConfig.defaultLocale &&
       !i18nConfig.prefixDefault
@@ -109,12 +105,5 @@ export const LanguageSwitcher = () => {
         </div>
       )}
     </div>
-
-    // <select onChange={handleChange} value={currentLocale}>
-    //   <option value="en">English</option>
-    //   <option value="hi">Hindi</option>
-    //   <option value="fr">French</option>
-    //   <option value="de">German</option>
-    // </select>
   );
 };

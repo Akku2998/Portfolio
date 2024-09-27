@@ -1,6 +1,6 @@
 "use client";
 import { useTranslation } from "react-i18next";
-import { DarkModeContext } from "..";
+import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext } from "react";
 
 export const WorkPage = ({ setPageRef }) => {
@@ -17,9 +17,7 @@ export const WorkPage = ({ setPageRef }) => {
             <h2 className="font-header py-16 md:py-10 mx-auto mt-8 text-4xl font-semibold uppercase sm:text-5xl lg:text-6xl">
               {t("recentWork")}
             </h2>
-            {/* <h3 className="font-header text-xl font-medium text-white sm:text-2xl lg:text-3xl">
-              {t("hereIs")}
-            </h3> */}
+
             <p
               className="pt-6 leading-relaxed w-9/12"
               style={{
@@ -55,10 +53,7 @@ export const WorkPage = ({ setPageRef }) => {
                     {t("designer")}
                   </h1>
                   <p className="mb-4">{t("designerDsc")}</p>
-                  <p
-                    className=" font-semibold text-lg mt-2 text-primary dark:text-black"
-                    // style={{ color: "rgba(85, 64, 175)" }}
-                  >
+                  <p className=" font-semibold text-lg mt-2 text-primary dark:text-black">
                     {t("designerLanguage")}
                   </p>
                   <p className="mb-4">UX, UI, Web, Apps, Logos</p>

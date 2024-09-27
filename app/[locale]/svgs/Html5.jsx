@@ -3,14 +3,14 @@ import React from "react";
 export const Html5 = ({ height = "100px", width = "100px" }) => {
   return (
     <svg
-      width="70px"
-      height="70px"
+      width={width}
+      height={height}
       viewBox="-52.5 0 361 361"
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMinYMin meet"
       fill="currentColor"
     >
-      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+      <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
       <g
         id="SVGRepo_tracerCarrier"
         strokeLinecap="round"

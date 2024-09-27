@@ -37,21 +37,13 @@ export const ContactUs = ({ setPageRef }) => {
         ref={(element) => setPageRef("contact", element)}
       >
         <div className="flex flex-col text-center items-center">
-          <h2
-            className="text-center font-header text-4xl font-semibold uppercase sm:text-5xl lg:text-6xl text-primary dark:text-black"
-            // style={{ color: "rgba(85, 64, 175)" }}
-          >
+          <h2 className="text-center font-header text-4xl font-semibold uppercase sm:text-5xl lg:text-6xl text-primary dark:text-black">
             {t("contactForm")}
           </h2>
           <h3 className="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
             {t("haveQuestions")}
           </h3>
-          <p
-            className="pt-6 leading-relaxed w-9/12 text-grey-100 text-center "
-            // style={{
-            //   color: "rgb(124 124 124/2)",
-            // }}
-          >
+          <p className="pt-6 leading-relaxed w-9/12 text-grey-100 text-center ">
             {t("contactDsc")}
           </p>
         </div>
@@ -116,12 +108,7 @@ export const ContactUs = ({ setPageRef }) => {
         <div className="flex flex-col pt-16 lg:flex-row">
           <div className="w-full border-l-2 border-t-2 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3">
             <div className="flex items-center">
-              <p
-                className="uppercase text-grey-100 lg:text-lg"
-                style={{
-                  color: "rgb(124 124 124/2)",
-                }}
-              >
+              <p className="uppercase text-gray-400 lg:text-lg">
                 {t("myPhone")}
               </p>
             </div>
@@ -131,12 +118,7 @@ export const ContactUs = ({ setPageRef }) => {
           </div>
           <div className="w-full border-l-2 border-t-0 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3 lg:border-l-0 lg:border-t-2">
             <div className="flex items-center">
-              <p
-                className="uppercase text-grey-400 lg:text-lg "
-                style={{
-                  color: "rgb(124 124 124/2)",
-                }}
-              >
+              <p className="uppercase text-gray-400 lg:text-lg ">
                 {t("myEmail")}
               </p>
             </div>
@@ -146,12 +128,7 @@ export const ContactUs = ({ setPageRef }) => {
           </div>
           <div className="w-full border-l-2 border-t-0 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3 lg:border-l-0 lg:border-t-2">
             <div className="flex items-center">
-              <p
-                className="uppercase text-grey-400 lg:text-lg"
-                style={{
-                  color: "rgb(124 124 124/2)",
-                }}
-              >
+              <p className="uppercase text-gray-400 lg:text-lg">
                 {t("myAddress")}
               </p>
             </div>

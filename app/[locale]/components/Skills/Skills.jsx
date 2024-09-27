@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { Debug, Github, Html5, Nextjs } from "../../svgs";
 import { useTranslation } from "react-i18next";
-import { DarkModeContext } from "..";
+import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext } from "react";
 
 export const Skills = ({ setPageRef }) => {
@@ -26,7 +26,6 @@ export const Skills = ({ setPageRef }) => {
         </h3>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-12">
-          {/* Add your skill components or visuals here */}
           <div className="group p-4 bg-gray-100 rounded flex flex-col justify-evenly items-center font-bold shadow transition duration-300 transform hover:scale-105 hover:bg-voilet-50 hover:text-yellow-500 hover:dark:bg-black hover:dark:text-white">
             <Html5 />
             HTML5
@@ -61,7 +60,6 @@ export const Skills = ({ setPageRef }) => {
             Core Java
           </div>
           <div className="p-4 bg-gray-100 rounded flex flex-col justify-evenly items-center font-bold shadow transition duration-300 transform hover:scale-105 hover:bg-voilet-50 hover:text-yellow-500 hover:dark:bg-black hover:dark:text-white">
-            {/* <Image src="/github.svg" alt="github" width={100} height={100}/> */}
             <Github width="100px" height="100px" />
             Github
           </div>

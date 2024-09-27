@@ -1,7 +1,7 @@
 "use client";
 import { useRef } from "react";
 import { HeaderSection, MobileAppDrawer, Footer } from "..";
-import { ScrollViewContext } from "@/app/[locale]/context/customContexts";
+import { ScrollViewContext } from "@/app/[locale]/context/scrollViewContext";
 
 export const CustomLayout = ({ children }) => {
   const drawerRef = useRef(null);

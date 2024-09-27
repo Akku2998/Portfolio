@@ -9,7 +9,7 @@ import {
   Chevron,
 } from "../../svgs";
 import { useTranslation } from "react-i18next";
-import { DarkModeContext } from "..";
+import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext } from "react";
 
 export const AboutSection = ({ setPageRef }) => {
@@ -100,44 +100,23 @@ export const AboutSection = ({ setPageRef }) => {
         <div className="w-full pl-0 pt-10 sm:w-3/4 lg:w-2/5 lg:pl-12 lg:pt-0">
           <div className="flex items-end justify-between">
             <h4 className="font-semibold uppercase text-black">{t("html")}</h4>
-            <h3
-              className="text-3xl font-semibold font-mono text-voilet-50"
-              style={{ color: darkMode ? "#202020" : "rgba(85, 64, 175)" }}
-              // style={{ color: darkMode ? "#202020" : "rgba(85, 64, 175)" }}
-            >
+            <h3 className="text-3xl font-semibold font-mono text-voilet-50 dark:text-black">
               85%
             </h3>
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-200">
-            <div
-              className=" h-2.5 rounded-full"
-              style={{
-                width: "85%",
-                backgroundColor: darkMode ? "#202020" : "rgba(85, 64, 175, 1)",
-              }}
-            ></div>
+            <div className=" h-2.5 rounded-full w-[85%] bg-voilet-50 dark:bg-black"></div>
           </div>
 
           <div className="pt-6">
             <div className="flex items-end justify-between">
               <h4 className="font-semibold uppercase text-black">{t("js")}</h4>
-              <h3
-                className="text-3xl font-semibold font-mono"
-                style={{ color: darkMode ? "#202020" : "rgba(85, 64, 175)" }}
-              >
+              <h3 className="text-3xl font-semibold font-mono text-voilet-50 dark:text-black">
                 95%
               </h3>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-200">
-              <div
-                className=" h-2.5 rounded-full"
-                style={{
-                  width: "95%",
-                  backgroundColor: darkMode
-                    ? "#202020"
-                    : "rgba(85, 64, 175, 1)",
-                }}
-              ></div>
+              <div className=" h-2.5 rounded-full w-[95%] bg-voilet-50 dark:bg-black"></div>
             </div>
           </div>
           <div className="pt-6">
@@ -145,23 +124,12 @@ export const AboutSection = ({ setPageRef }) => {
               <h4 className="font-semibold uppercase text-black">
                 {t("react")}
               </h4>
-              <h3
-                className="text-3xl font-semibold text-primary font-mono"
-                style={{ color: darkMode ? "#202020" : "rgba(85, 64, 175)" }}
-              >
+              <h3 className="text-3xl font-semibold font-mono text-voilet-50 dark:text-black">
                 90%
               </h3>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-200">
-              <div
-                className=" h-2.5 rounded-full"
-                style={{
-                  width: "90%",
-                  backgroundColor: darkMode
-                    ? "#202020"
-                    : "rgba(85, 64, 175, 1)",
-                }}
-              ></div>
+              <div className=" h-2.5 rounded-full w-[90%] bg-voilet-50 dark:bg-black"></div>
             </div>
           </div>
           <div className="pt-6">
@@ -169,23 +137,12 @@ export const AboutSection = ({ setPageRef }) => {
               <h4 className="font-semibold uppercase text-black">
                 {t("next")}
               </h4>
-              <h3
-                className="text-3xl font-semibold text-primary font-mono"
-                style={{ color: darkMode ? "#202020" : "rgba(85, 64, 175)" }}
-              >
+              <h3 className="text-3xl font-semibold text-primary font-mono text-voilet-50 dark:text-black">
                 93%
               </h3>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-200">
-              <div
-                className=" h-2.5 rounded-full"
-                style={{
-                  width: "93%",
-                  backgroundColor: darkMode
-                    ? "#202020"
-                    : "rgba(85, 64, 175, 1)",
-                }}
-              ></div>
+              <div className=" h-2.5 rounded-full w-[93%] bg-voilet-50 dark:bg-black"></div>
             </div>
           </div>
           <div className="pt-6">
@@ -193,23 +150,12 @@ export const AboutSection = ({ setPageRef }) => {
               <h4 className="font-semibold uppercase text-black">
                 {t("figma")}
               </h4>
-              <h3
-                className="text-3xl font-semibold text-primary font-mono"
-                style={{ color: darkMode ? "#202020" : "rgba(85, 64, 175)" }}
-              >
+              <h3 className="text-3xl font-semibold text-primary font-mono text-voilet-50 dark:text-black">
                 75%
               </h3>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-200">
-              <div
-                className=" h-2.5 rounded-full"
-                style={{
-                  width: "75%",
-                  backgroundColor: darkMode
-                    ? "#202020"
-                    : "rgba(85, 64, 175, 1)",
-                }}
-              ></div>
+              <div className=" h-2.5 rounded-full w-[75%] bg-voilet-50 dark:bg-black"></div>
             </div>
           </div>
         </div>

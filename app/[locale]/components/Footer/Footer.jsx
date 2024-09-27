@@ -16,27 +16,12 @@ export function Footer() {
     <>
       <footer className="bg-primary dark:bg-black text-white py-8 mt-16">
         <div className="container mx-auto flex flex-col items-center">
-          {/* <div className="flex space-x-4">
-            <p className="text-sm">
-              Contact:{" "}
-              <a href="aakritinidhi123@gmail.com">aakritinidhi123@gmail.com</a>
-            </p>
-          </div> */}
-
           <div className="mt-4">
-            {/* <Link
-              href="https://github.com/Akku2998"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <p className="text-sm underline">Github</p>
-            </Link> */}
-
             <div className="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
               <p className="font-body text-lg uppercase text-white">
                 {t("connect")}
               </p>
-              {/* <div className="hidden sm:flex"> */}
+
               <i className="text-3xl text-yellow-400">
                 <Chevron color="currentColor" />
               </i>

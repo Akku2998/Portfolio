@@ -4,7 +4,7 @@ import { MobileMenu } from "../../svgs";
 import { useTranslation } from "react-i18next";
 import { LanguageSwitcher } from "..";
 import { useContext } from "react";
-import { DarkModeContext } from "..";
+import { DarkModeContext } from "../../context/darkModeContext";
 
 export const HeaderSection = ({ onMobileDrawerClick, smoothScollView }) => {
   const { t } = useTranslation();

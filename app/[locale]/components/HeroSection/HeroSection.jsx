@@ -10,7 +10,7 @@ import {
 } from "../../svgs";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
-import { DarkModeContext } from "..";
+import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext } from "react";
 
 export const HeroSection = () => {
@@ -35,12 +35,7 @@ export const HeroSection = () => {
 
       <div className="container relative z-30 pt-20 pb-12 sm:pt-56 sm:pb-48 lg:pt-64 lg:pb-48">
         <div className="flex flex-col items-center justify-center lg:flex-row">
-          <div
-            className="rounded-full border-8 shadow-xl"
-            style={{
-              borderColor: darkMode ? "#202020" : "rgb(85 64 175/1)",
-            }}
-          >
+          <div className="rounded-full border-8 shadow-xl border-voilet-50 dark:border-dark-50">
             <Image
               loading="eager"
               src="/user.jpg"
