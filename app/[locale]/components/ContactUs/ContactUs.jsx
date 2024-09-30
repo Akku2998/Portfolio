@@ -61,7 +61,7 @@ export const ContactUs = ({ setPageRef }) => {
             <input
               type="text"
               id="name"
-              className="w-full px-3 py-2 border rounded"
+              className="w-full px-3 py-2 border rounded focus:dark:outline-black"
               placeholder={t("yourName")}
               onChange={handleChange}
             />
@@ -76,7 +76,7 @@ export const ContactUs = ({ setPageRef }) => {
             <input
               type="email"
               id="email"
-              className="w-full px-3 py-2 border rounded"
+              className="w-full px-3 py-2 border rounded  focus:dark:outline-black"
               placeholder={t("yourEmail")}
               onChange={handleChange}
               required
@@ -91,7 +91,7 @@ export const ContactUs = ({ setPageRef }) => {
             </label>
             <textarea
               id="message"
-              className="w-full px-3 py-2 border rounded"
+              className="w-full px-3 py-2 border rounded  focus:dark:outline-black"
               placeholder={t("yourMsg")}
               rows="4"
               onChange={handleChange}

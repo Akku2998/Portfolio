@@ -1,11 +1,11 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 import { DarkModeContext } from "./darkModeContext";
 
 export const DarkModeProvider = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     // Check localStorage and apply saved theme
     if (typeof window !== "undefined") {
       const savedTheme = localStorage.getItem("theme");
