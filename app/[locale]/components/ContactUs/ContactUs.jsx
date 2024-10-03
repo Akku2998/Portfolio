@@ -8,6 +8,7 @@ export const ContactUs = ({ setPageRef }) => {
     email: "",
     message: "",
   });
+
   const { t } = useTranslation();
 
   const handleChange = (e) => {
@@ -15,13 +16,24 @@ export const ContactUs = ({ setPageRef }) => {
   };
 
   const handleSubmit = async (e) => {
-    let response = {};
+    e.preventDefault();
 
     try {
-      response.ok = true;
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      console.log(response);
+
       if (response.ok) {
+        const data = await response.json();
         alert("Message sent successfully!");
       } else {
+        console.error("Error:", response.statusText);
         alert("Error sending message. Please try again.");
       }
     } catch (error) {
@@ -64,6 +76,8 @@ export const ContactUs = ({ setPageRef }) => {
               className="w-full px-3 py-2 border rounded focus:dark:outline-black"
               placeholder={t("yourName")}
               onChange={handleChange}
+              value={formData.name}
+              required
             />
           </div>
           <div className="mb-4">
@@ -79,6 +93,7 @@ export const ContactUs = ({ setPageRef }) => {
               className="w-full px-3 py-2 border rounded  focus:dark:outline-black"
               placeholder={t("yourEmail")}
               onChange={handleChange}
+              value={formData.email}
               required
             />
           </div>
@@ -95,6 +110,7 @@ export const ContactUs = ({ setPageRef }) => {
               placeholder={t("yourMsg")}
               rows="4"
               onChange={handleChange}
+              value={formData.message}
               required
             ></textarea>
           </div>
