@@ -9,15 +9,11 @@ export async function POST(req) {
     console.log("Received form data:", { name, email, message });
 
     if (!name || !email || !message) {
-      console.log("Missing form fields:", { name, email, message });
       return NextResponse.json(
         { error: "All fields are required" },
         { status: 400 }
       );
     }
-
-    console.log("Nodemailer transporter created");
-
     const mailOptions = {
       from: email,
       to: process.env.GMAIL_USER,

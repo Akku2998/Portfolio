@@ -8,15 +8,38 @@ export const ContactUs = ({ setPageRef }) => {
     email: "",
     message: "",
   });
+  const [errors, setErrors] = useState({});
 
   const { t } = useTranslation();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
+    setErrors({ ...errors, [e.target.id]: "" });
+  };
+  const validate = () => {
+    let formErrors = {};
+    if (!formData.name) {
+      formErrors.name = t("nameRequired");
+    }
+    if (!formData.email) {
+      formErrors.email = t("emailRequired");
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      formErrors.email = t("invalidEmail");
+    }
+    if (!formData.message) {
+      formErrors.message = t("messageRequired");
+    }
+    return formErrors;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const formErrors = validate();
+
+    if (Object.keys(formErrors).length > 0) {
+      setErrors(formErrors);
+      return;
+    }
 
     try {
       const response = await fetch("/api/send-email", {
@@ -79,7 +102,11 @@ export const ContactUs = ({ setPageRef }) => {
               value={formData.name}
               required
             />
+            {errors.name && (
+              <p className="text-red-500 text-sm">{errors.name}</p>
+            )}
           </div>
+
           <div className="mb-4">
             <label
               htmlFor="email"
@@ -90,13 +117,17 @@ export const ContactUs = ({ setPageRef }) => {
             <input
               type="email"
               id="email"
-              className="w-full px-3 py-2 border rounded  focus:dark:outline-black"
+              className="w-full px-3 py-2 border rounded focus:dark:outline-black"
               placeholder={t("yourEmail")}
               onChange={handleChange}
               value={formData.email}
               required
             />
+            {errors.email && (
+              <p className="text-red-500 text-sm">{errors.email}</p>
+            )}
           </div>
+
           <div className="mb-4">
             <label
               htmlFor="message"
@@ -106,14 +137,18 @@ export const ContactUs = ({ setPageRef }) => {
             </label>
             <textarea
               id="message"
-              className="w-full px-3 py-2 border rounded  focus:dark:outline-black"
+              className="w-full px-3 py-2 border rounded focus:dark:outline-black"
               placeholder={t("yourMsg")}
               rows="4"
               onChange={handleChange}
               value={formData.message}
               required
             ></textarea>
+            {errors.message && (
+              <p className="text-red-500 text-sm">{errors.message}</p>
+            )}
           </div>
+
           <button
             type="submit"
             className="bg-primary dark:bg-black text-white px-8 py-4 rounded-full"
@@ -121,6 +156,7 @@ export const ContactUs = ({ setPageRef }) => {
             {t("sendMsg")}
           </button>
         </form>
+
         <div className="flex flex-col pt-16 lg:flex-row">
           <div className="w-full border-l-2 border-t-2 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3">
             <div className="flex items-center">

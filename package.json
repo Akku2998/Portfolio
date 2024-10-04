@@ -11,6 +11,8 @@
   "dependencies": {
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.1.1",
+    "formic": "^0.0.10",
+    "formik": "^2.4.6",
     "i18next": "^23.14.0",
     "i18next-resources-to-backend": "^1.2.1",
     "mongoose": "^8.0.4",
