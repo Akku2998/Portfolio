@@ -6,7 +6,6 @@ export const DarkModeProvider = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false);
 
   useLayoutEffect(() => {
-    // Check localStorage and apply saved theme
     if (typeof window !== "undefined") {
       const savedTheme = localStorage.getItem("theme");
       if (savedTheme === "dark") {
