@@ -50,8 +50,6 @@ export const ContactUs = ({ setPageRef }) => {
         body: JSON.stringify(formData),
       });
 
-      console.log(response);
-
       if (response.ok) {
         const data = await response.json();
         alert("Message sent successfully!");
