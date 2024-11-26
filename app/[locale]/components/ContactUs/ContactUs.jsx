@@ -183,7 +183,7 @@ export const ContactUs = ({ setPageRef }) => {
               </p>
             </div>
             <p className="pt-2 text-left font-body font-semibold  text-voilet-50 lg:text-lg dark:text-black">
-              Shravanthi woods, Nobo Nagar Bengaluru
+              Shravanthi Woods, Nobo Nagar Bengaluru
             </p>
           </div>
         </div>
