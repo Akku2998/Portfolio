@@ -52,7 +52,7 @@ export const ContactUs = ({ setPageRef }) => {
 
       if (response.ok) {
         const data = await response.json();
-        alert("Message sent successfully..!");
+        alert("Message sent successfully!");
       } else {
         console.error("Error:", response.statusText);
         alert("Error sending message. Please try again.");
