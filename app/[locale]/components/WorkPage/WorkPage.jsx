@@ -93,7 +93,8 @@ export const WorkPage = ({ setPageRef }) => {
                     {t("frontendLanguage")}
                   </p>
                   <p className="mb-4">
-                    HTML, Pug, javaScript, ReactJs, CSS, Sass, Git
+                    HTML, javaScript, ReactJs, TypeScript, NextJs, ReactRouter,
+                    ReactHooks, Redux, TailwindCSS
                   </p>
                   <p className=" font-bold mb-2 text-primary dark:text-black">
                     {t("ftool")}
@@ -131,14 +132,17 @@ export const WorkPage = ({ setPageRef }) => {
                   <p className=" font-semibold text-lg mt-2 text-primary dark:text-black">
                     {t("backendLanguage")}
                   </p>
-                  <p className="mb-4">PHP, Python, Ruby, Java</p>
+                  <p className="mb-4">PHP, C#, Java</p>
                   <p className=" font-bold mb-2 text-primary dark:text-black">
                     {t("btool")}
                   </p>
                   <ul className="list-disc list-inside">
                     <li>MySQL PostgreSQL</li>
                     <li>Node JS</li>
+                    <li>Express JS</li>
+                    <li>RESTfull apis</li>
                     <li>PostgreSQL</li>
+                    <li>CI & CD</li>
                   </ul>
                 </div>
               </div>
