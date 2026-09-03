@@ -46,7 +46,7 @@ export const AboutSection = ({ setPageRef }) => {
             </div>
             <div className="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
               <Link
-                href="https://www.facebook.com/people/Nidhi-Gupta/pfbid0MAP2Zj71H2UpdvjEbNV5UQtzBGGZP1A7qdm746WCQmnLURr1WE9rdsipwKKV2KCtl/?name=xhp_nt__fb__action__open_user"
+                href="https://www.facebook.com/nidhi.gupta.16524"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -75,7 +75,7 @@ export const AboutSection = ({ setPageRef }) => {
                 </i>
               </Link>
               <Link
-                href="https://www.linkedin.com/in/nidhi-gupta-aati/"
+                href="https://www.linkedin.com/in/nidhi-gupta-aakriti/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="pl-4"
