@@ -215,7 +215,7 @@ export const Skills = ({ setPageRef }) => {
           setPageRef("skills", element);
         }
       }}
-      className="relative overflow-hidden bg-gray-50 py-20 dark:bg-[#111111] sm:py-24 lg:py-28"
+      className="relative overflow-hidden bg-gray-50 py-8 dark:bg-[#111111] sm:py-8 lg:py-8"
     >
       {/* Background decoration */}
       <div className="pointer-events-none absolute -left-40 top-20 h-80 w-80 rounded-full bg-purple-500/5 blur-3xl" />
@@ -233,7 +233,7 @@ export const Skills = ({ setPageRef }) => {
             {t("goodAt")}
           </h2>
 
-          <div className="mx-auto mt-6 h-1 w-16 rounded-full bg-voilet-50" />
+          <div className="mx-auto mt-6 h-1 w-16 rounded-full bg-voilet-50 dark:bg-yellow-400" />
 
           <p className="mt-6 text-base leading-7 text-gray-600 dark:text-gray-400 sm:text-lg">
             {t("theseSkill")}
@@ -241,7 +241,7 @@ export const Skills = ({ setPageRef }) => {
         </div>
 
         {/* Skill Cards */}
-        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {skills.map((skill) => (
             <div
               key={skill.name}

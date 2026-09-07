@@ -34,7 +34,7 @@ export const AboutSection = ({ setPageRef }) => {
   return (
     <section
       ref={(element) => setPageRef("about", element)}
-      className="relative overflow-hidden bg-gray-50 py-20 dark:bg-[#111111] sm:py-24 lg:py-28"
+      className="relative overflow-hidden bg-gray-50 py-12 dark:bg-[#111111] sm:py-14 lg:py-14"
     >
       {/* Background decoration */}
       <div className="pointer-events-none absolute -left-32 top-20 h-72 w-72 rounded-full bg-purple-500/5 blur-3xl" />
@@ -51,7 +51,7 @@ export const AboutSection = ({ setPageRef }) => {
             {t("whoAmI")}
           </h2>
 
-          <div className="mx-auto mt-6 h-1 w-16 rounded-full bg-yellow-400" />
+          <div className="mx-auto mt-6 h-1 w-16 rounded-full bg-violet-500 dark:bg-yellow-400" />
         </div>
 
         {/* Main About Content */}

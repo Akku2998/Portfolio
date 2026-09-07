@@ -97,7 +97,7 @@ export const Portfolio = ({ setPageRef }) => {
           PORTFOLIO HEADER
       ====================================================== */}
       <div className="border-b border-gray-200 dark:border-white/10">
-        <div className="container mx-auto px-5 py-20 sm:px-8 md:py-24">
+        <div className="container mx-auto px-5 py-12 sm:px-8 md:py-14">
           <div className="grid items-end gap-10 lg:grid-cols-[1.2fr_0.8fr]">
             {/* LEFT SIDE */}
             <div>

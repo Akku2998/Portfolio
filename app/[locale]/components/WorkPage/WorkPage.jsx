@@ -82,7 +82,7 @@ export const WorkPage = ({ setPageRef }) => {
           setPageRef("work", element);
         }
       }}
-      className="relative overflow-hidden bg-white py-20 dark:bg-[#0d0d0d] sm:py-24 lg:py-28"
+      className="relative overflow-hidden bg-white py-12 dark:bg-[#0d0d0d] sm:py-14 lg:py-14"
     >
       {/* Background decorations */}
       <div className="pointer-events-none absolute -left-40 top-20 h-80 w-80 rounded-full bg-purple-500/5 blur-3xl" />
@@ -99,7 +99,7 @@ export const WorkPage = ({ setPageRef }) => {
             {t("recentWork")}
           </h2>
 
-          <div className="mx-auto mt-6 h-1 w-16 rounded-full bg-yellow-400" />
+          <div className="mx-auto mt-6 h-1 w-16 rounded-full bg-violet-500 dark:bg-yellow-400" />
 
           <p className="mt-6 text-base leading-7 text-gray-600 dark:text-gray-400 sm:text-lg">
             {t("workDsc")}
@@ -156,7 +156,7 @@ export const WorkPage = ({ setPageRef }) => {
                     key={item}
                     className="flex gap-3 rounded-xl border border-gray-200 bg-white p-4 dark:border-white/10 dark:bg-white/5"
                   >
-                    <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-yellow-400 text-xs font-bold text-gray-900">
+                    <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-violet-500 dark:bg-yellow-400 text-xs font-bold text-gray-900">
                       ✓
                     </span>
 
@@ -246,7 +246,7 @@ export const WorkPage = ({ setPageRef }) => {
                       key={point}
                       className="flex gap-3 text-sm leading-6 text-gray-600 dark:text-gray-300"
                     >
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-yellow-400" />
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-violet-500 dark:bg-yellow-400" />
                       <span>{point}</span>
                     </li>
                   ))}

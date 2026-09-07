@@ -7,6 +7,7 @@ import {
   Portfolio,
   ContactUs,
   WorkPage,
+  ExperienceSection,
 } from "..";
 import { ScrollViewContext } from "@/app/[locale]/context/scrollViewContext";
 
@@ -22,6 +23,7 @@ export const MainPage = () => {
       <HeroSection />
       <AboutSection setPageRef={setPageRef} />
       <Skills setPageRef={setPageRef} />
+      <ExperienceSection setPageRef={setPageRef} />
       <WorkPage setPageRef={setPageRef} />
       <Portfolio setPageRef={setPageRef} />
       <ContactUs setPageRef={setPageRef} />

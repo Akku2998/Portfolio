@@ -118,7 +118,7 @@ export const ContactUs = ({ setPageRef }) => {
     <section
       id="contact"
       ref={(element) => setPageRef("contact", element)}
-      className="bg-gray-50 py-20 dark:bg-[#0d0d0d] sm:py-24"
+      className="bg-gray-50 py-12 dark:bg-[#0d0d0d] sm:py-14"
     >
       <div className="container mx-auto px-5 sm:px-8">
         {/* =====================================

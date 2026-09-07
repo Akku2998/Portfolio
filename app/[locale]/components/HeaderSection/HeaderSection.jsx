@@ -31,7 +31,8 @@ export const HeaderSection = ({ onMobileDrawerClick, smoothScollView }) => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:block">
-            <ul className="flex items-center gap-7">
+            <ul className="flex items-center gap-6 xl:gap-7">
+              {/* About */}
               <li
                 className="group cursor-pointer"
                 onClick={() => smoothScollView("about")}
@@ -43,6 +44,7 @@ export const HeaderSection = ({ onMobileDrawerClick, smoothScollView }) => {
                 <span className="mt-1 block h-0.5 w-0 bg-yellow-400 transition-all duration-300 group-hover:w-full" />
               </li>
 
+              {/* Skills */}
               <li
                 className="group cursor-pointer"
                 onClick={() => smoothScollView("skills")}
@@ -53,11 +55,20 @@ export const HeaderSection = ({ onMobileDrawerClick, smoothScollView }) => {
 
                 <span className="mt-1 block h-0.5 w-0 bg-yellow-400 transition-all duration-300 group-hover:w-full" />
               </li>
-              {/* 
+
+              {/* Experience */}
               <li
                 className="group cursor-pointer"
-                onClick={() => smoothScollView("work")}
-              > */}
+                onClick={() => smoothScollView("experience")}
+              >
+                <span className="font-header text-sm font-bold uppercase tracking-wide text-white transition-colors group-hover:text-yellow-400">
+                  Experience
+                </span>
+
+                <span className="mt-1 block h-0.5 w-0 bg-yellow-400 transition-all duration-300 group-hover:w-full" />
+              </li>
+
+              {/* Work */}
               <li
                 className="group cursor-pointer"
                 onClick={() => smoothScollView("work")}
@@ -69,6 +80,7 @@ export const HeaderSection = ({ onMobileDrawerClick, smoothScollView }) => {
                 <span className="mt-1 block h-0.5 w-0 bg-yellow-400 transition-all duration-300 group-hover:w-full" />
               </li>
 
+              {/* Portfolio */}
               <li
                 className="group cursor-pointer"
                 onClick={() => smoothScollView("portfolio")}
@@ -80,6 +92,7 @@ export const HeaderSection = ({ onMobileDrawerClick, smoothScollView }) => {
                 <span className="mt-1 block h-0.5 w-0 bg-yellow-400 transition-all duration-300 group-hover:w-full" />
               </li>
 
+              {/* Contact */}
               <li
                 className="group cursor-pointer"
                 onClick={() => smoothScollView("contact")}
@@ -98,20 +111,25 @@ export const HeaderSection = ({ onMobileDrawerClick, smoothScollView }) => {
 
               {/* Dark Mode */}
               <li>
-                <button
+                {/* <button
                   type="button"
                   aria-label="Toggle Dark Mode"
                   onClick={toggleDarkMode}
                   className="flex h-9 w-9 items-center justify-center rounded-full transition-colors hover:bg-white/10"
+                > */}
+                <button
+                  className="nav-link nav-svg cursor-pointer"
+                  aria-label="Toggle Dark Mode"
+                  onClick={toggleDarkMode} // Toggle dark mode when clicking the icon
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="22"
                     height="22"
                     viewBox="0 0 24 24"
-                    fill={darkMode ? "#fff" : "#fff"}
+                    fill="#fff"
                   >
-                    <path d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12-5.373-12-12-12-12 5.373-12 12zm2 0c0-5.514 4.486-10 10-10v20c-5.514 0-10-4.486-10-10z" />
+                    <path d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12S18.627 0 12 0 0 5.373 0 12zm2 0c0-5.514 4.486-10 10-10v20C6.486 22 2 17.514 2 12z" />
                   </svg>
                 </button>
               </li>
@@ -124,7 +142,14 @@ export const HeaderSection = ({ onMobileDrawerClick, smoothScollView }) => {
               type="button"
               onClick={onMobileDrawerClick}
               aria-label="Open navigation menu"
-              className="flex items-center justify-center"
+              className="
+    flex
+    h-9
+    w-9
+    items-center
+    justify-center
+    lg:hidden
+  "
             >
               <MobileMenu />
             </button>
