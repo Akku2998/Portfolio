@@ -124,7 +124,7 @@ const SkillIcon = ({ icon }) => {
 
     case "typescript":
       return (
-        <Image
+        <img
           src="https://cdn.simpleicons.org/typescript"
           alt="TypeScript"
           width={70}
@@ -146,7 +146,7 @@ const SkillIcon = ({ icon }) => {
 
     case "node":
       return (
-        <Image
+        <img
           src="https://cdn.simpleicons.org/nodedotjs"
           alt="Node.js"
           width={70}
@@ -157,7 +157,7 @@ const SkillIcon = ({ icon }) => {
 
     case "express":
       return (
-        <Image
+        <img
           src="https://cdn.simpleicons.org/express"
           alt="Express.js"
           width={70}
@@ -168,7 +168,7 @@ const SkillIcon = ({ icon }) => {
 
     case "mysql":
       return (
-        <Image
+        <img
           src="https://cdn.simpleicons.org/mysql"
           alt="MySQL"
           width={70}
@@ -179,7 +179,7 @@ const SkillIcon = ({ icon }) => {
 
     case "prisma":
       return (
-        <Image
+        <img
           src="https://cdn.simpleicons.org/prisma"
           alt="Prisma ORM"
           width={70}
@@ -190,7 +190,7 @@ const SkillIcon = ({ icon }) => {
 
     case "docker":
       return (
-        <Image
+        <img
           src="https://cdn.simpleicons.org/docker"
           alt="Docker"
           width={70}
