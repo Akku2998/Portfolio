@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 import { useTranslation } from "react-i18next";
@@ -54,7 +55,7 @@ export const LanguageSwitcher = () => {
       router.push("/" + newLocale + currentPathname);
     } else {
       router.push(
-        currentPathname.replace(`/${currentLocale}`, `/${newLocale}`)
+        currentPathname.replace(`/${currentLocale}`, `/${newLocale}`),
       );
     }
 
@@ -78,9 +79,11 @@ export const LanguageSwitcher = () => {
         onClick={() => setIsOpen(!isOpen)}
         className="p-2 flex flex-row items-center border border-none text-sm font-medium text-gray-100 focus:outline-none"
       >
-        <img
+        <Image
           src={languages.find((lang) => lang.code === currentLocale)?.flag}
-          className="w-5 h-5"
+          width={20}
+          height={20}
+          className="h-5 w-5"
           alt={currentLocale}
         />
         <span className="ml-1">
@@ -98,7 +101,13 @@ export const LanguageSwitcher = () => {
                 currentLocale === lang.code ? "bg-gray-200" : ""
               }`}
             >
-              <img src={lang.flag} className="w-5 h-5" alt={lang.label} />
+              <Image
+                src={lang.flag}
+                width={20}
+                height={20}
+                className="h-5 w-5"
+                alt={lang.label}
+              />
               <span className="ml-1">{lang.label}</span>
             </button>
           ))}

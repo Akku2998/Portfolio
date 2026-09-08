@@ -6,11 +6,16 @@
     "dev": "i18nexus pull && next dev",
     "build": "i18nexus pull && next build",
     "start": "i18nexus pull && next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
+    "@ai-sdk/react": "^4.0.96",
+    "@google/genai": "^2.21.0",
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.1.1",
+    "ai": "^7.0.93",
     "formic": "^0.0.10",
     "formik": "^2.4.6",
     "i18next": "^23.14.0",
@@ -29,6 +34,7 @@
     "eslint-config-next": "14.0.4",
     "i18nexus-cli": "^3.5.0",
     "postcss": "^8",
+    "prettier": "^3.9.6",
     "tailwindcss": "^3.3.0"
   }
 }

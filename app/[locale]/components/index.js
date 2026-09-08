@@ -12,3 +12,4 @@ export { MainPage } from "./MainPage/MainPage";
 export { WorkPage } from "./WorkPage/WorkPage";
 export { LanguageSwitcher } from "./LanguageSwitcher/LanguageSwitcher";
 export { ExperienceSection } from "./ExperienceSection/ExperienceSection";
+export { AiAssistant } from "./AiAssistant/AiAssistant";

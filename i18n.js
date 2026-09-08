@@ -7,7 +7,7 @@ export default async function initTranslations(
   locale,
   namespaces,
   i18nInstance,
-  resources
+  resources,
 ) {
   i18nInstance = i18nInstance || createInstance();
 
@@ -15,9 +15,10 @@ export default async function initTranslations(
 
   if (!resources) {
     i18nInstance.use(
-      resourcesToBackend((language, namespace) =>
-        import(`@/locales/${language}/${namespace}.json`)
-      )
+      resourcesToBackend(
+        (language, namespace) =>
+          import(`@/locales/${language}/${namespace}.json`),
+      ),
     );
   }
 

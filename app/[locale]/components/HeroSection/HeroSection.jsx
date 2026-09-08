@@ -1,144 +1,16 @@
-// "use client";
-// import Link from "next/link";
-// import { Github, Facebook, Linkedin, Insta, Chevron } from "../../svgs";
-// import { useTranslation } from "react-i18next";
-// import Image from "next/image";
-// import { DarkModeContext } from "../../context/darkModeContext";
-// import { useContext } from "react";
-
-// export const HeroSection = () => {
-//   const { t } = useTranslation();
-//   const { darkMode } = useContext(DarkModeContext);
-//   return (
-//     <div
-//       className="relative bg-cover bg-center bg-no-repeat py-8"
-//       style={{
-//         backgroundImage:
-//           "url(https://atom.redpixelthemes.com/assets/img/bg-hero.jpg)",
-//       }}
-//     >
-//       <div
-//         className="absolute inset-0 z-20"
-//         style={{
-//           backgroundImage: darkMode
-//             ? "linear-gradient(to right, rgba(0, 0, 0, 0.90), rgba(0, 0, 0, 0.87))"
-//             : "linear-gradient(to right, rgba(85,64,174,.95), rgba(65,47,144,.93))",
-//         }}
-//       />
-
-//       <div className="container relative z-30 pt-20 pb-12 sm:pt-56 sm:pb-48 lg:pt-64 lg:pb-48">
-//         <div className="flex flex-col items-center justify-center lg:flex-row">
-//           <div className="rounded-full border-8 shadow-xl border-voilet-50 dark:border-dark-50">
-//             <Image
-//               loading="eager"
-//               src="/user.jpg"
-//               className="h-64 w-64 object-cover rounded-full"
-//               height={200}
-//               width={200}
-//               alt="Nidhi Kumari"
-//             />
-//           </div>
-//           <div className="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">
-//             <h1 className="text-center font-header text-4xl text-white sm:text-left sm:text-5xl md:text-6xl">
-//               {t("heroIntro")}
-//             </h1>
-//             <h2 className="text-center sm:text-left pt-3 text-xl text-yellow-400 font-semibold sm:text-2xl">
-//               {t("heroRole")}
-//             </h2>
-//             <p className="text-center sm:text-left pt-3 max-w-xl text-white/80 leading-relaxed">
-//               {t("heroSummary")}
-//             </p>
-
-//             <div className="flex flex-col sm:flex-row gap-4 pt-6 justify-center sm:justify-start">
-//               <Link
-//                 href="/Nidhi_Kumari_Resume.pdf"
-//                 target="_blank"
-//                 rel="noopener noreferrer"
-//                 className="bg-yellow-500 text-black font-semibold px-6 py-3 rounded-full text-center hover:bg-yellow-400 transition"
-//               >
-//                 {t("downloadResume")}
-//               </Link>
-//               <Link
-//                 href="#contact"
-//                 className="border-2 border-white text-white font-semibold px-6 py-3 rounded-full text-center hover:bg-white hover:text-black transition"
-//               >
-//                 {t("letsTalk")}
-//               </Link>
-//             </div>
-
-//             <div className="flex flex-col justify-center pt-6 sm:flex-row sm:pt-8 lg:justify-start">
-//               <div className="flex items-center justify-center pl-0 sm:justify-start md:pl-1">
-//                 <p className="font-body text-lg uppercase text-white">
-//                   {t("connect")}
-//                 </p>
-//                 <div className="hidden sm:flex">
-//                   <i className="text-3xl text-yellow-400">
-//                     <Chevron color="currentColor" />
-//                   </i>
-//                 </div>
-//               </div>
-//               <div className="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
-//                 <Link
-//                   href="https://www.facebook.com/nidhi.gupta.16524"
-//                   target="_blank"
-//                   rel="noopener noreferrer"
-//                   className="pl-4"
-//                 >
-//                   <i className="text-2xl text-white hover:text-yellow-500">
-//                     <Facebook color="currentColor" />
-//                   </i>
-//                 </Link>
-//                 <Link
-//                   href="https://github.com/Akku2998"
-//                   target="_blank"
-//                   rel="noopener noreferrer"
-//                   className="pl-4"
-//                 >
-//                   <i className="text-2xl text-white hover:text-yellow-500">
-//                     <Github color="currentColor" />
-//                   </i>
-//                 </Link>
-//                 <Link
-//                   href="https://www.linkedin.com/in/nidhi-gupta-aakriti/"
-//                   target="_blank"
-//                   rel="noopener noreferrer"
-//                   className="pl-4"
-//                 >
-//                   <i className="text-2xl text-white hover:text-yellow-500">
-//                     <Linkedin color="currentColor" />
-//                   </i>
-//                 </Link>
-//                 <Link
-//                   href="https://www.instagram.com/"
-//                   target="_blank"
-//                   rel="noopener noreferrer"
-//                   className="pl-4"
-//                 >
-//                   <i className="text-2xl text-white hover:text-yellow-500">
-//                     <Insta color="currentColor" />
-//                   </i>
-//                 </Link>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
 "use client";
 
 import Image from "next/image";
 import Link from "next/link";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
-
+import { AiAssistant } from "../AiAssistant/AiAssistant";
 import { DarkModeContext } from "../../context/darkModeContext";
 
 export const HeroSection = () => {
   const { t } = useTranslation();
   const { darkMode } = useContext(DarkModeContext);
+  const [isAiAssistantOpen, setIsAiAssistantOpen] = useState(false);
 
   return (
     <section
@@ -239,12 +111,7 @@ export const HeroSection = () => {
                 {/* AI Assistant */}
                 <button
                   type="button"
-                  onClick={() => {
-                    // TODO:
-                    // Open your AI portfolio assistant here.
-                    // Example:
-                    // setIsAiAssistantOpen(true);
-                  }}
+                  onClick={() => setIsAiAssistantOpen(true)}
                   className="group inline-flex w-full items-center justify-center rounded-lg border border-yellow-400/60 bg-yellow-400/10 px-6 py-3.5 text-sm font-semibold text-yellow-300 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:bg-yellow-400 hover:text-black sm:w-auto"
                 >
                   <svg
@@ -306,55 +173,6 @@ export const HeroSection = () => {
                 <span>2+ Years Experience</span>
               </div>
             </div>
-
-            {/* RIGHT PROFILE */}
-            {/* <div className="order-1 flex justify-center lg:order-2">
-              <div className="relative">
-              
-                <div className="absolute -inset-8 rounded-full bg-yellow-400/10 blur-3xl" />
-
-               
-                <div className="relative">
-                  <div className="rounded-[50%] border border-white/10 bg-white/5 p-4 shadow-2xl backdrop-blur-md">
-                    <div className="overflow-hidden rounded-[50%] border-4 border-yellow-400/70">
-                      <Image
-                        src="/user.jpg"
-                        alt="Nidhi Kumari - Full Stack Developer"
-                        width={360}
-                        height={360}
-                        priority
-                        className="h-[280px] w-[280px] object-cover sm:h-[330px] sm:w-[330px] lg:h-[360px] lg:w-[360px]"
-                      />
-                    </div>
-                  </div>
-
-                  
-                  <div className="absolute -bottom-5 -left-5 rounded-2xl border border-white/10 bg-black/60 px-5 py-4 shadow-xl backdrop-blur-md sm:-left-10">
-                    <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-white/45">
-                      Experience
-                    </p>
-
-                    <p className="mt-1 text-xl font-bold text-white">
-                      2+ Years
-                    </p>
-                  </div>
-
-                  
-                  <div className="absolute -right-5 top-8 rounded-2xl border border-yellow-400/20 bg-black/60 px-5 py-4 shadow-xl backdrop-blur-md sm:-right-10">
-                    <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-white/45">
-                      Specialization
-                    </p>
-
-                    <p className="mt-1 text-sm font-bold text-yellow-400">
-                      Full Stack
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div> */}
-            {/* ================================
-              RIGHT SIDE / PROFILE
-          ================================= */}
 
             <div
               className="
@@ -427,104 +245,6 @@ export const HeroSection = () => {
                     className="h-full w-full object-cover"
                   />
                 </div>
-
-                {/* ==========================
-                  EXPERIENCE CARD
-              =========================== */}
-                {/* <div
-                  className="
-                  absolute
-                  -bottom-3
-                  -left-5
-                  rounded-lg
-                  border
-                  border-white/10
-                  bg-black/80
-                  px-3
-                  py-2
-                  shadow-lg
-                  backdrop-blur-md
-
-                  sm:-bottom-4
-                  sm:-left-8
-                  sm:px-4
-                  sm:py-3
-                "
-                >
-                  <p
-                    className="
-                    text-base
-                    font-bold
-                    text-yellow-400
-                    sm:text-lg
-
-                  "
-                  >
-                    2+
-                  </p>
-
-                  <p
-                    className="
-                    text-[8px]
-                    uppercase
-                    tracking-wide
-                    text-white/70
-                    sm:text-[10px]
-                  "
-                  >
-                    Years Experience
-                  </p>
-                </div>
-
-                <div
-                  className="
-                  absolute
-                  -right-5
-                  top-0
-                  max-w-[130px]
-                  rounded-lg
-                  border
-                  border-white/10
-                  bg-black/80
-                  px-3
-                  py-2
-                  shadow-lg
-                  backdrop-blur-md
-
-                  sm:-right-8
-                  sm:top-3
-                  sm:max-w-none
-                  sm:px-4
-                  sm:py-3
-                "
-                >
-                  <p
-                    className="
-                    text-[9px]
-                    font-semibold
-                    text-white
-                    sm:text-xs
-                  "
-                  >
-                    Specialization
-                  </p>
-
-                  <p
-                    className="
-                    mt-0.5
-                    text-[9px]
-                    leading-4
-                    text-yellow-400
-                    sm:mt-1
-                    sm:text-xs
-                  "
-                  >
-                    Full Stack Development
-                  </p>
-                </div> */}
-                {/* ==========================
-    EXPERIENCE CARD
-=========================== */}
                 <div
                   className="
     absolute
@@ -635,6 +355,10 @@ export const HeroSection = () => {
           </div>
         </div>
       </div>
+      <AiAssistant
+        isOpen={isAiAssistantOpen}
+        onClose={() => setIsAiAssistantOpen(false)}
+      />
     </section>
   );
 };
