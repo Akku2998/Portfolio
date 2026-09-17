@@ -8,12 +8,8 @@ export const AiAssistant = ({ isOpen, onClose }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
-  // Reference to the bottom of the chat
   const messagesEndRef = useRef(null);
 
-  /*
-   * Automatically scroll to the latest message
-   */
   useEffect(() => {
     if (!isOpen) {
       return;
