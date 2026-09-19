@@ -18,8 +18,13 @@ export const AiAssistant = ({ isOpen, onClose }) => {
       return;
     }
 
+    //   messagesEndRef.current?.scrollIntoView({
+    //     behavior: "smooth",
+    //     block: "end",
+    //   });
+    // }, [messages, isLoading, isOpen]);
     messagesEndRef.current?.scrollIntoView({
-      behavior: "smooth",
+      behavior: isLoading ? "auto" : "smooth",
       block: "end",
     });
   }, [messages, isLoading, isOpen]);
@@ -31,6 +36,86 @@ export const AiAssistant = ({ isOpen, onClose }) => {
   /*
    * Send message to Gemini API
    */
+  // const sendMessage = async (messageText) => {
+  //   const text = messageText.trim();
+
+  //   if (!text || isLoading) {
+  //     return;
+  //   }
+
+  //   setInput("");
+  //   setError("");
+  //   setIsLoading(true);
+
+  //   /*
+  //    * Create user message
+  //    */
+  //   const userMessage = {
+  //     id: Date.now().toString(),
+  //     role: "user",
+  //     text,
+  //   };
+
+  //   const updatedMessages = [...messages, userMessage];
+
+  //   setMessages(updatedMessages);
+
+  //   try {
+  //     /*
+  //      * Convert messages into API format
+  //      */
+  //     const apiMessages = updatedMessages.map((message) => ({
+  //       id: message.id,
+  //       role: message.role,
+  //       parts: [
+  //         {
+  //           type: "text",
+  //           text: message.text,
+  //         },
+  //       ],
+  //     }));
+
+  //     /*
+  //      * Send request to Next.js API
+  //      */
+  //     const response = await fetch("/api/chat", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         messages: apiMessages,
+  //       }),
+  //     });
+
+  //     const data = await response.json();
+
+  //     if (!response.ok) {
+  //       throw new Error(data.error || "Failed to get AI response.");
+  //     }
+
+  //     /*
+  //      * Create assistant message
+  //      */
+  //     const assistantMessage = {
+  //       id: `${Date.now()}-assistant`,
+  //       role: "assistant",
+  //       text: data.text || "I couldn't generate a response.",
+  //       action: data.action || null,
+  //     };
+
+  //     setMessages((previousMessages) => [
+  //       ...previousMessages,
+  //       assistantMessage,
+  //     ]);
+  //   } catch (error) {
+  //     console.error("AI Assistant Error:", error);
+
+  //     setError("Sorry, I couldn't process that request. Please try again.");
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
   const sendMessage = async (messageText) => {
     const text = messageText.trim();
 
@@ -42,11 +127,8 @@ export const AiAssistant = ({ isOpen, onClose }) => {
     setError("");
     setIsLoading(true);
 
-    /*
-     * Create user message
-     */
     const userMessage = {
-      id: Date.now().toString(),
+      id: `${Date.now()}-user`,
       role: "user",
       text,
     };
@@ -57,7 +139,7 @@ export const AiAssistant = ({ isOpen, onClose }) => {
 
     try {
       /*
-       * Convert messages into API format
+       * Convert messages into the format expected by the API.
        */
       const apiMessages = updatedMessages.map((message) => ({
         id: message.id,
@@ -70,9 +152,6 @@ export const AiAssistant = ({ isOpen, onClose }) => {
         ],
       }));
 
-      /*
-       * Send request to Next.js API
-       */
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: {
@@ -83,15 +162,15 @@ export const AiAssistant = ({ isOpen, onClose }) => {
         }),
       });
 
+      /*
+       * Safely read the API response.
+       */
       const data = await response.json();
 
       if (!response.ok) {
         throw new Error(data.error || "Failed to get AI response.");
       }
 
-      /*
-       * Create assistant message
-       */
       const assistantMessage = {
         id: `${Date.now()}-assistant`,
         role: "assistant",
@@ -106,7 +185,10 @@ export const AiAssistant = ({ isOpen, onClose }) => {
     } catch (error) {
       console.error("AI Assistant Error:", error);
 
-      setError("Sorry, I couldn't process that request. Please try again.");
+      setError(
+        error.message ||
+          "Sorry, I couldn't process that request. Please try again.",
+      );
     } finally {
       setIsLoading(false);
     }
@@ -336,7 +418,7 @@ export const AiAssistant = ({ isOpen, onClose }) => {
 
         {/* ================= LOADING ================= */}
 
-        {isLoading && (
+        {/* {isLoading && (
           <div className="mt-4 flex justify-start">
             <div
               className="
@@ -356,14 +438,40 @@ export const AiAssistant = ({ isOpen, onClose }) => {
               </div>
             </div>
           </div>
-        )}
+        )} */}
+        {/* ================= LOADING ================= */}
 
+        {isLoading && (
+          <div className="mt-4 flex justify-start">
+            <div
+              className="
+        rounded-2xl
+        rounded-bl-md
+        bg-white/10
+        px-4
+        py-3
+      "
+            >
+              <div className="flex items-center gap-2">
+                {/* <span className="text-xs text-white/50">Thinking</span> */}
+
+                <div className="flex items-center gap-1">
+                  <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-white/50 [animation-delay:0ms]" />
+
+                  <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-white/50 [animation-delay:150ms]" />
+
+                  <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-white/50 [animation-delay:300ms]" />
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
         <div ref={messagesEndRef} />
       </div>
 
       {/* ================= ERROR ================= */}
 
-      {error && (
+      {/* {error && (
         <div
           className="
             mx-3
@@ -377,6 +485,36 @@ export const AiAssistant = ({ isOpen, onClose }) => {
           "
         >
           <p className="text-xs text-red-300">{error}</p>
+        </div>
+      )} */}
+      {/* ================= ERROR ================= */}
+
+      {error && (
+        <div
+          className="
+      mx-3
+      mb-2
+      rounded-lg
+      border
+      border-red-400/20
+      bg-red-400/10
+      px-3
+      py-2
+    "
+          role="alert"
+        >
+          <div className="flex items-start justify-between gap-2">
+            <p className="text-xs leading-5 text-red-300">{error}</p>
+
+            <button
+              type="button"
+              onClick={() => setError("")}
+              className="text-xs text-red-300/70 hover:text-red-200"
+              aria-label="Dismiss error"
+            >
+              ×
+            </button>
+          </div>
         </div>
       )}
 
