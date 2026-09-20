@@ -33,89 +33,6 @@ export const AiAssistant = ({ isOpen, onClose }) => {
     return null;
   }
 
-  /*
-   * Send message to Gemini API
-   */
-  // const sendMessage = async (messageText) => {
-  //   const text = messageText.trim();
-
-  //   if (!text || isLoading) {
-  //     return;
-  //   }
-
-  //   setInput("");
-  //   setError("");
-  //   setIsLoading(true);
-
-  //   /*
-  //    * Create user message
-  //    */
-  //   const userMessage = {
-  //     id: Date.now().toString(),
-  //     role: "user",
-  //     text,
-  //   };
-
-  //   const updatedMessages = [...messages, userMessage];
-
-  //   setMessages(updatedMessages);
-
-  //   try {
-  //     /*
-  //      * Convert messages into API format
-  //      */
-  //     const apiMessages = updatedMessages.map((message) => ({
-  //       id: message.id,
-  //       role: message.role,
-  //       parts: [
-  //         {
-  //           type: "text",
-  //           text: message.text,
-  //         },
-  //       ],
-  //     }));
-
-  //     /*
-  //      * Send request to Next.js API
-  //      */
-  //     const response = await fetch("/api/chat", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({
-  //         messages: apiMessages,
-  //       }),
-  //     });
-
-  //     const data = await response.json();
-
-  //     if (!response.ok) {
-  //       throw new Error(data.error || "Failed to get AI response.");
-  //     }
-
-  //     /*
-  //      * Create assistant message
-  //      */
-  //     const assistantMessage = {
-  //       id: `${Date.now()}-assistant`,
-  //       role: "assistant",
-  //       text: data.text || "I couldn't generate a response.",
-  //       action: data.action || null,
-  //     };
-
-  //     setMessages((previousMessages) => [
-  //       ...previousMessages,
-  //       assistantMessage,
-  //     ]);
-  //   } catch (error) {
-  //     console.error("AI Assistant Error:", error);
-
-  //     setError("Sorry, I couldn't process that request. Please try again.");
-  //   } finally {
-  //     setIsLoading(false);
-  //   }
-  // };
   const sendMessage = async (messageText) => {
     const text = messageText.trim();
 
@@ -203,6 +120,12 @@ export const AiAssistant = ({ isOpen, onClose }) => {
     await sendMessage(input);
   };
 
+  const clearChat = () => {
+    setMessages([]);
+    setInput("");
+    setError("");
+  };
+
   return (
     <div
       className="
@@ -229,7 +152,7 @@ export const AiAssistant = ({ isOpen, onClose }) => {
     >
       {/* ================= HEADER ================= */}
 
-      <div
+      {/* <div
         className="
           flex
           items-center
@@ -291,6 +214,149 @@ export const AiAssistant = ({ isOpen, onClose }) => {
         >
           ×
         </button>
+        <button
+          type="button"
+          onClick={clearChat}
+          className="rounded-lg p-2 text-gray-300 transition hover:bg-white/10 hover:text-white"
+          aria-label="Clear chat"
+          title="Clear chat"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M3 6h18" />
+            <path d="M8 6V4h8v2" />
+            <path d="M19 6l-1 14H6L5 6" />
+            <path d="M10 11v5" />
+            <path d="M14 11v5" />
+          </svg>
+        </button>
+      </div> */}
+
+      <div
+        className="
+    flex
+    items-center
+    justify-between
+    gap-3
+    border-b
+    border-white/10
+    bg-[#211b3b]
+    px-4
+    py-3.5
+  "
+      >
+        {/* LEFT: AI PROFILE */}
+        <div className="flex min-w-0 items-center gap-3">
+          <div
+            className="
+        flex
+        h-10
+        w-10
+        shrink-0
+        items-center
+        justify-center
+        rounded-full
+        bg-yellow-400
+        text-lg
+        text-black
+        shadow-sm
+      "
+          >
+            ✨
+          </div>
+
+          <div className="min-w-0">
+            <h3 className="text-sm font-bold leading-5 text-white">Nidhi AI</h3>
+
+            <div className="mt-0.5 flex items-center gap-1.5">
+              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-green-400" />
+
+              <span className="truncate text-[11px] leading-4 text-white/50">
+                AI Portfolio Assistant
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* RIGHT: HEADER ACTIONS */}
+        <div className="flex shrink-0 items-center gap-1">
+          {/* CLEAR CHAT BUTTON */}
+          <button
+            type="button"
+            onClick={clearChat}
+            className="
+        flex
+        h-9
+        w-9
+        items-center
+        justify-center
+        rounded-full
+        text-white/50
+        transition
+        hover:bg-white/10
+        hover:text-white
+        focus:outline-none
+        focus:ring-2
+        focus:ring-yellow-400/50
+      "
+            aria-label="Clear chat"
+            title="Clear chat"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M3 6h18" />
+              <path d="M8 6V4h8v2" />
+              <path d="M19 6l-1 14H6L5 6" />
+              <path d="M10 11v5" />
+              <path d="M14 11v5" />
+            </svg>
+          </button>
+
+          {/* CLOSE BUTTON */}
+          <button
+            type="button"
+            onClick={onClose}
+            className="
+        flex
+        h-9
+        w-9
+        items-center
+        justify-center
+        rounded-full
+        text-xl
+        leading-none
+        text-white/50
+        transition
+        hover:bg-white/10
+        hover:text-white
+        focus:outline-none
+        focus:ring-2
+        focus:ring-yellow-400/50
+      "
+            aria-label="Close AI assistant"
+            title="Close"
+          >
+            <span className="relative -top-px">×</span>
+          </button>
+        </div>
       </div>
 
       {/* ================= MESSAGES ================= */}

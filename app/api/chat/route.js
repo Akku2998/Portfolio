@@ -122,7 +122,7 @@ export async function POST(req) {
      *
      * Only send the latest 6 messages to Gemini.
      */
-    const recentMessages = messages.slice(-6);
+    const recentMessages = messages.slice(-4);
 
     const contents = getConversationContents(recentMessages);
 
@@ -148,8 +148,14 @@ export async function POST(req) {
         systemInstruction: SYSTEM_INSTRUCTION,
         tools: portfolioTools,
         temperature: 0.3,
-        maxOutputTokens: 200,
+        maxOutputTokens: 120,
       },
+      // config: {
+      //   systemInstruction: SYSTEM_INSTRUCTION,
+      //   tools: portfolioTools,
+      //   temperature: 0.3,
+      //   maxOutputTokens: 200,
+      // },
     });
 
     console.log("Gemini response received.");
