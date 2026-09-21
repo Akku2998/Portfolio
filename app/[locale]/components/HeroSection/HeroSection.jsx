@@ -359,6 +359,88 @@ export const HeroSection = () => {
         isOpen={isAiAssistantOpen}
         onClose={() => setIsAiAssistantOpen(false)}
       />
+      {/* FLOATING AI CHAT BUTTON */}
+      {!isAiAssistantOpen && (
+        <button
+          type="button"
+          onClick={() => setIsAiAssistantOpen(true)}
+          className="
+      group
+      fixed
+      bottom-6
+      right-6
+      z-[90]
+      flex
+      h-14
+      w-14
+      items-center
+      justify-center
+      rounded-full
+      border
+      border-yellow-300/30
+      bg-yellow-400
+      text-gray-900
+      shadow-xl
+      shadow-yellow-400/25
+      transition-all
+      duration-300
+      hover:-translate-y-1
+      hover:bg-yellow-300
+      hover:shadow-2xl
+      hover:shadow-yellow-400/40
+      focus:outline-none
+      focus:ring-4
+      focus:ring-yellow-400/30
+      sm:bottom-8
+      sm:right-8
+    "
+          aria-label="Open Nidhi AI assistant"
+          title="Ask Nidhi AI"
+        >
+          {/* Message Icon */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="
+        h-6
+        w-6
+        transition-transform
+        duration-300
+        group-hover:scale-110
+      "
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={1.8}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path
+              d="M20 11.5a8 8 0 0 1-8 8
+        8.5 8.5 0 0 1-3.5-.75
+        L4 20l1.25-4.5A8 8 0 1 1 20 11.5Z"
+            />
+
+            <path d="M8 11.5h.01" />
+            <path d="M12 11.5h.01" />
+            <path d="M16 11.5h.01" />
+          </svg>
+
+          {/* Online Indicator */}
+          <span
+            className="
+        absolute
+        right-0.5
+        top-0.5
+        h-3
+        w-3
+        rounded-full
+        border-2
+        border-[#211b3b]
+        bg-green-400
+      "
+          />
+        </button>
+      )}
     </section>
   );
 };

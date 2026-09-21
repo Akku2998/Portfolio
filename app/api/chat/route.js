@@ -90,6 +90,75 @@ function getConversationContents(messages) {
   return contents;
 }
 
+function formatToolResponse(functionName, functionResult) {
+  switch (functionName) {
+    case "getProfile":
+      return `Nidhi Kumari is a ${functionResult.title} with ${functionResult.experience} of experience. She is based in ${functionResult.location}. ${functionResult.summary}`;
+
+    case "getSkills": {
+      const skills = functionResult;
+
+      return [
+        "Nidhi's technical skills include:",
+        skills.languages?.length
+          ? `Languages: ${skills.languages.join(", ")}.`
+          : "",
+        skills.frontend?.length
+          ? `Frontend: ${skills.frontend.join(", ")}.`
+          : "",
+        skills.backend?.length ? `Backend: ${skills.backend.join(", ")}.` : "",
+        skills.database?.length
+          ? `Database: ${skills.database.join(", ")}.`
+          : "",
+        skills.tools?.length ? `Tools: ${skills.tools.join(", ")}.` : "",
+      ]
+        .filter(Boolean)
+        .join("\n");
+    }
+
+    case "getExperience": {
+      if (!Array.isArray(functionResult)) {
+        return "Nidhi's experience information is available in her portfolio.";
+      }
+
+      return functionResult
+        .map(
+          (experience) =>
+            `${experience.position} at ${experience.company} (${experience.period}). ${experience.responsibilities?.slice(0, 4).join(" ") || ""}`,
+        )
+        .join("\n\n");
+    }
+
+    case "getProjects": {
+      if (!Array.isArray(functionResult)) {
+        return "Nidhi's project information is available in her portfolio.";
+      }
+
+      return functionResult
+        .map(
+          (project) =>
+            `${project.name}: ${project.description} Technologies: ${project.technologies?.join(", ") || "Not specified"}.`,
+        )
+        .join("\n\n");
+    }
+
+    case "getProject":
+      if (functionResult.found && functionResult.project) {
+        const project = functionResult.project;
+
+        return `${project.name}: ${project.description} Technologies: ${project.technologies?.join(", ") || "Not specified"}.`;
+      }
+
+      return functionResult.message || "Project information was not found.";
+
+    case "getEducation":
+      return `${functionResult.degree} from ${functionResult.university} (${functionResult.period}). CGPA: ${functionResult.cgpa}.`;
+
+    default:
+      return "The requested portfolio information is available.";
+  }
+}
+
 export async function POST(req) {
   try {
     const body = await req.json();
@@ -150,12 +219,6 @@ export async function POST(req) {
         temperature: 0.3,
         maxOutputTokens: 120,
       },
-      // config: {
-      //   systemInstruction: SYSTEM_INSTRUCTION,
-      //   tools: portfolioTools,
-      //   temperature: 0.3,
-      //   maxOutputTokens: 200,
-      // },
     });
 
     console.log("Gemini response received.");
@@ -210,57 +273,10 @@ export async function POST(req) {
         },
       });
     }
-
-    // --------------------------------------------------
-    // SECOND GEMINI REQUEST
-    // --------------------------------------------------
-
-    const modelContent = response.candidates?.[0]?.content;
-
-    if (!modelContent) {
-      throw new Error("Gemini did not return valid model content.");
-    }
-
-    const finalContents = [
-      ...contents,
-
-      modelContent,
-
-      {
-        role: "user",
-
-        parts: [
-          {
-            functionResponse: {
-              name: functionName,
-
-              response: {
-                output: functionResult,
-              },
-            },
-          },
-        ],
-      },
-    ];
-
-    console.log("Sending tool result back to Gemini...");
-
-    const finalResponse = await ai.models.generateContent({
-      model: MODEL_NAME,
-
-      contents: finalContents,
-
-      config: {
-        systemInstruction: SYSTEM_INSTRUCTION,
-
-        temperature: 0.3,
-
-        maxOutputTokens: 250,
-      },
-    });
+    const formattedText = formatToolResponse(functionName, functionResult);
 
     return jsonResponse({
-      text: finalResponse.text || "I couldn't generate a response.",
+      text: formattedText || "I couldn't find the requested information.",
     });
   } catch (error) {
     console.error("========== GEMINI CHAT ERROR ==========");
