@@ -67,9 +67,6 @@ export const AiAssistant = ({ isOpen, onClose }) => {
         }),
       });
 
-      /*
-       * Safely read the API response.
-       */
       const data = await response.json();
 
       if (!response.ok) {
