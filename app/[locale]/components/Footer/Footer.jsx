@@ -23,18 +23,6 @@ export function Footer() {
       href: "https://www.facebook.com/nidhi.gupta.16524",
       icon: Facebook,
     },
-    // Add your real Twitter/X profile here if you have one
-    // {
-    //   name: "Twitter",
-    //   href: "https://twitter.com/yourusername",
-    //   icon: Twitter,
-    // },
-    // Add your real Instagram profile here if you have one
-    // {
-    //   name: "Instagram",
-    //   href: "https://www.instagram.com/yourusername/",
-    //   icon: Insta,
-    // },
   ];
 
   const navigation = [
