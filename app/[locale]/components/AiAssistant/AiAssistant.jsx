@@ -10,19 +10,10 @@ export const AiAssistant = ({ isOpen, onClose }) => {
 
   const messagesEndRef = useRef(null);
 
-  /*
-   * Automatically scroll to the latest message
-   */
   useEffect(() => {
     if (!isOpen) {
       return;
     }
-
-    //   messagesEndRef.current?.scrollIntoView({
-    //     behavior: "smooth",
-    //     block: "end",
-    //   });
-    // }, [messages, isLoading, isOpen]);
     messagesEndRef.current?.scrollIntoView({
       behavior: isLoading ? "auto" : "smooth",
       block: "end",
@@ -55,9 +46,6 @@ export const AiAssistant = ({ isOpen, onClose }) => {
     setMessages(updatedMessages);
 
     try {
-      /*
-       * Convert messages into the format expected by the API.
-       */
       const apiMessages = updatedMessages.map((message) => ({
         id: message.id,
         role: message.role,
@@ -150,97 +138,6 @@ export const AiAssistant = ({ isOpen, onClose }) => {
         sm:rounded-2xl
       "
     >
-      {/* ================= HEADER ================= */}
-
-      {/* <div
-        className="
-          flex
-          items-center
-          justify-between
-          border-b
-          border-white/10
-          bg-[#211b3b]
-          px-4
-          py-4
-        "
-      >
-        <div className="flex items-center gap-3">
-          <div
-            className="
-              flex
-              h-9
-              w-9
-              items-center
-              justify-center
-              rounded-full
-              bg-yellow-400
-              text-lg
-              text-black
-            "
-          >
-            ✨
-          </div>
-
-          <div>
-            <h3 className="text-sm font-bold text-white">Nidhi AI</h3>
-
-            <div className="mt-0.5 flex items-center gap-1.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-green-400" />
-
-              <span className="text-[11px] text-white/50">
-                AI Portfolio Assistant
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <button
-          type="button"
-          onClick={onClose}
-          className="
-            flex
-            h-8
-            w-8
-            items-center
-            justify-center
-            rounded-full
-            text-xl
-            text-white/50
-            transition
-            hover:bg-white/10
-            hover:text-white
-          "
-          aria-label="Close AI assistant"
-        >
-          ×
-        </button>
-        <button
-          type="button"
-          onClick={clearChat}
-          className="rounded-lg p-2 text-gray-300 transition hover:bg-white/10 hover:text-white"
-          aria-label="Clear chat"
-          title="Clear chat"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M3 6h18" />
-            <path d="M8 6V4h8v2" />
-            <path d="M19 6l-1 14H6L5 6" />
-            <path d="M10 11v5" />
-            <path d="M14 11v5" />
-          </svg>
-        </button>
-      </div> */}
-
       <div
         className="
     flex
@@ -482,31 +379,6 @@ export const AiAssistant = ({ isOpen, onClose }) => {
           ))}
         </div>
 
-        {/* ================= LOADING ================= */}
-
-        {/* {isLoading && (
-          <div className="mt-4 flex justify-start">
-            <div
-              className="
-                rounded-2xl
-                rounded-bl-md
-                bg-white/10
-                px-4
-                py-3
-              "
-            >
-              <div className="flex items-center gap-1">
-                <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-white/50" />
-
-                <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-white/50 [animation-delay:150ms]" />
-
-                <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-white/50 [animation-delay:300ms]" />
-              </div>
-            </div>
-          </div>
-        )} */}
-        {/* ================= LOADING ================= */}
-
         {isLoading && (
           <div className="mt-4 flex justify-start">
             <div
@@ -535,24 +407,6 @@ export const AiAssistant = ({ isOpen, onClose }) => {
         <div ref={messagesEndRef} />
       </div>
 
-      {/* ================= ERROR ================= */}
-
-      {/* {error && (
-        <div
-          className="
-            mx-3
-            mb-2
-            rounded-lg
-            border
-            border-red-400/20
-            bg-red-400/10
-            px-3
-            py-2
-          "
-        >
-          <p className="text-xs text-red-300">{error}</p>
-        </div>
-      )} */}
       {/* ================= ERROR ================= */}
 
       {error && (
